@@ -1,19 +1,13 @@
 module INTG_RAT(input CLK, RST, Start, Run, Dout,
-                 output Fail, Done, RD, WR, Din, output [1:0] Move, output [3:0] X,Y);
+                 output logic Fail, Done, RD, WR, Din, output logic [1:0] Move, output logic [3:0] X,Y);
 
-    wire ldX, ldY, push, pop;
-    wire [3:0] M1, M2, IncOut, DecOut;
-    logic SelMux1, SelMux2, full, empty;
-    wire [1:0] DinStack, TopStack;
+    logic ldX, ldY, ldR, ldC, cen, Izc, cout, push1, pop1, push2, pop2, SelMux5,
+        full1, empty1, full2, empty2, finish, invalid;
 
-    Reg_4Bit Xreg(CLK, RST, ldX, M2, X);
-    Reg_4Bit Yreg(CLK, RST, ldY, M2, Y);
-    QuadMUX_2to1 Mux1(X, Y, SelMux1, M1);
-    QuadMUX_2to1 Mux2(IncOut, DecOut, SelMux2, M2);
-    INC Inc(M1, IncOut);
-    DEC Dec(M1, DecOut);
-    Stack_2bitWide stack(CLK, RST, push, pop, DinStack,
-                             full, empty, TopStack);
+    Rat_DataPath Datapath(CLK, RST, Dout, ldX, ldY, ldR, ldC, cen, Izc, SelMux5, push1, pop1, push2, pop2,
+                            finish, invalid, empty1, empty2, full1, full2, cout, Move, X, Y);
 
+    Rat_Controller Controller(CLK, RST, Start, Run, cout, invalid, finish, empty1, empty2, full1, full2,
+                                ldC, ldX, ldY, Izc, SelMux5, Din, push1, pop1, push2, pop2, cen, WR, RD, Fail, Done);
 
 endmodule
