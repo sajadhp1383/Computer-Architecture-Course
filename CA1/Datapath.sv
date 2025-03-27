@@ -1,8 +1,8 @@
 module Rat_DataPath(input clk, rst, Dout, ldX, ldY, ldR, ldC, cen, Izc, Sel5, push1, pop1, push2, pop2,
-                 output logic finish, invalid, empty1, empty2, full1, full2, cout, output logic [1:0] Move, output logic [3:0] X,Y);
+                 output logic finish, invalid, empty1, empty2, full1, full2, cout, output logic [1:0]Creg, Move, output logic [3:0] X,Y);
 
     wire [3:0] currentX, currentY;
-    logic [1:0] count, Creg, TopStack1, M5out;
+    logic [1:0] count, TopStack1, M5out;
     logic [3:0] M1out, M2out; 
     wire [1:0] PIcounter, invTopStack1;
     logic cout;
