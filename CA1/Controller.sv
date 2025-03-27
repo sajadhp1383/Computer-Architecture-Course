@@ -27,7 +27,7 @@ module Rat_Controller(input clk, rst, start, run, cout, invalid, finish, empty1,
             ps = ns;
     end
 
-    always @(posedge clk or start or run or cout or invalid or finish or empty1 or empty2 or full1 or full2)
+    always @(posedge clk)
     begin
         case(ps)
             `S0: ns= start ? `S1 : `S0;
@@ -74,9 +74,12 @@ module Rat_Controller(input clk, rst, start, run, cout, invalid, finish, empty1,
         `S5: {ldX,ldY,ldC}=3'b111;
         `S6: ldR=1'b1;
         `S7: {WR, DinMem}=2'b11;
-        `S8:ldX=~(Creg[0]^Creg[1]),
-            ldY=Creg[0]^Creg[1],
+        `S8:
+        begin
+            ldX=~(Creg[0]^Creg[1]);
+            ldY=Creg[0]^Creg[1];
             {push1,Izc}=2'b11;
+        end
         `S9:push2=1'b1;
         `S10:pop1=1'b1;
         `S11:done=1'b1;
