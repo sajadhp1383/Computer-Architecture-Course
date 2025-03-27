@@ -12,8 +12,7 @@
 `define S11 4'b1011
 `define S12 4'b1100
 `define S13 4'b1101
-`define S14 4'b1110
-`define S15 4'b1111
+
 
 module Rat_Controller(input clk, rst, start, run, cout, invalid, finish, empty1, empty2, full1, full2,
                       output logic ldC, ldX, ldY, Izc, SelMux5, DinMem, push1, pop1, push2, pop2,
@@ -60,6 +59,30 @@ module Rat_Controller(input clk, rst, start, run, cout, invalid, finish, empty1,
             `S11: ns= run? `S12 : `S11;
             `S12: empty2? ns= `S0 : `S13;
             `S13: ns= `S12;
+        endcase
+    end
+
+    always @(ps)
+    begin
+        {ldC, ldX, ldY, Izc, SelMux5, DinMem, push1, pop1, push2, pop2, cen, WR, RD, fail, done} = 16'b0;
+        case(ps)
+        `S0:;
+        `S1: rst=1'b1;
+        `S2: {cen,RD,ldR}=3'b111;
+        `S3: fail=1'b1;
+        `S4: {ldR,Sel5,WR,DinMem}=4'b1111;
+        `S5: {ldX,ldY,ldC}=3'b111;
+        `S6: ldR=1'b1;
+        `S7: {WR, DinMem}=2'b11;
+        `S8:ldX=~(Creg[0]^Creg[1]),
+            ldY=Creg[0]^Creg[1],
+            {push1,Izc}=2'b11;
+        `S9:push2=1'b1;
+        `S10:pop1=1'b1;
+        `S11:done=1'b1;
+        `S12:;
+        `S13:pop2=1'b1;
+
         endcase
     end
 
