@@ -21,7 +21,7 @@ module Stack_2bitWide(input clk, rst, Push, Pop, input [1:0] Din,
                 ptr <= ptr -1;
             end
             if(ptr > 0)
-                Top <= stack[ptr-1] 
+                Top <= stack[ptr-1];
             else
                 Top <= 2'bx;
 
