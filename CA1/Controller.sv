@@ -72,15 +72,15 @@ module Rat_Controller(input clk, rst, start, run, invalid, finish, empty1, empty
             `S1: resetDataPath = 1'b1;
             `S2: {cen,RD,ldR,SelMux6,SelMux7} = 5'b11111;
             `S3: ldR = 1'b1;
-            `S4: {ldR,SelMux5} = 2'b11;
+            `S4: {ldR,SelMux5,WR,DinMem} = 4'b1111;
             `S5: {SelMux6,SelMux7,WR} = 3'b111;
             `S6: begin ldX = ~(Creg[0]^Creg[1]);  ldY = Creg[0]^Creg[1]; ldC = 1'b1; end
             `S7: {ldR, pop1} = 2'b11;
             `S8: fail = 1'b1;
             `S9: {WR, DinMem} = 2'b11;
             `S10: begin ldX = ~(Creg[0]^Creg[1]); ldY = Creg[0]^Creg[1];  {push1,Izc,IzR} = 3'b111; end
-            `S11: push2 = 1'b1;
-            `S12: pop1 = 1'b1;
+            `S11: {push2,pop1} = 2'b11;
+            `S12: ;
             `S13: done = 1'b1;
             `S14: enMBuff = 1'b1; 
             `S15: pop2 = 1'b1;

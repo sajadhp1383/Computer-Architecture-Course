@@ -12,7 +12,7 @@ module TB_MAZE();
     initial begin
         #20 rst = 1; #10 rst = 0;
         #10 Start = 1; #5 Start = 0;
-        #1800
+        #6000
         #10 Run = 1; #5 Run = 0;
         #800
         #40 $stop;
