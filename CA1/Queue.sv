@@ -9,12 +9,12 @@ module Queue(input clk, rst, enqueue, dequeue, recover, input [1:0] Din, output 
             read_ptr <= 0; write_ptr <= 0; count <= 0; full <= 0; empty <= 1; backup_count <= 0;
         end else begin
             if (enqueue && !full) begin
-                queue[write_ptr] <= data_in;
+                queue[write_ptr] <= Din;
                 write_ptr <= (write_ptr + 1) % 256;
                 count <= count + 1;
             end
             if (dequeue && !empty) begin
-                data_out <= queue[read_ptr];
+                Dout <= queue[read_ptr];
                 backup_queue[backup_count] <= queue[read_ptr];
                 backup_count <= backup_count + 1;
                 read_ptr <= (read_ptr + 1) % 256;

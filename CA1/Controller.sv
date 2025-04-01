@@ -1,24 +1,27 @@
-`define S0 4'b0000
-`define S1 4'b0001
-`define S2 4'b0010
-`define S3 4'b0011
-`define S4 4'b0100
-`define S5 4'b0101
-`define S6 4'b0110
-`define S7 4'b0111
-`define S8 4'b1000
-`define S9 4'b1001
-`define S10 4'b1010
-`define S11 4'b1011
-`define S12 4'b1100
-`define S13 4'b1101
-`define S14 4'b1110
-`define S15 4'b1111
+`define S0 5'b00000
+`define S1 5'b00001
+`define S2 5'b00010
+`define S3 5'b00011
+`define S4 5'b00100
+`define S5 5'b00101
+`define S6 5'b00110
+`define S7 5'b00111
+`define S8 5'b01000
+`define S9 5'b01001
+`define S10 5'b01010
+`define S11 5'b01011
+`define S12 5'b01100
+`define S13 5'b01101
+`define S14 5'b01110
+`define S15 5'b01111
+`define S16 5'b10000
+`define S17 5'b10001
+`define S18 5'b10010
 
 
-module Rat_Controller(input clk, rst, start, run, invalid, finish, empty1, empty2, full1, full2, input [1:0] Creg,
+module Rat_Controller(input clk, rst, start, run, invalid, finish, empty1, empty2, emptyq, full1, full2, enqueue, input [1:0] Creg,
                       output logic ldC, ldX, ldY, ldR, Izc, IzR, enMBuff, SelMux5, SelMux6, SelMux7, DinMem, push1, pop1, push2, pop2,
-                        cen, WR, RD, fail, done, resetDataPath);
+                        cen, WR, RD, fail, done, resetDataPath, dequeue, recover);
 
     reg [3:0] ps, ns;
     always @(posedge clk) begin
@@ -58,9 +61,18 @@ module Rat_Controller(input clk, rst, start, run, invalid, finish, empty1, empty
             `S10: ns = finish ? `S11 : `S2;
             `S11: ns = `S12;
             `S12: ns = empty1 ? `S13 : `S11;
-            `S13: ns = run ? `S14 : `S13;
-            `S14: ns = empty2 ? `S0 : `S15;
-            `S15: ns = `S14;
+            `S13: ns = `S14;
+            `S14: ns = empty2 ? `S15 : `S13;
+            `S15: ns = run? `S16:`S15;
+            `S16: if (~emptyq)begin
+                ns = `S17;
+            end
+            else
+                ns = `S18;
+            `S17: ns = `S16;
+            `S18: ns = `S15;
+
+            re
             
         endcase
     end
@@ -81,9 +93,12 @@ module Rat_Controller(input clk, rst, start, run, invalid, finish, empty1, empty
             `S10: begin ldX = ~(Creg[0]^Creg[1]); ldY = Creg[0]^Creg[1];  {push1,Izc,IzR} = 3'b111; end
             `S11: {push2,pop1} = 2'b11;
             `S12: ;
-            `S13: done = 1'b1;
-            `S14: enMBuff = 1'b1; 
-            `S15: pop2 = 1'b1;
+            `S13: {pop2,enqueue} = 2'b11;
+            `S14: ; 
+            `S15: done = 1'b1;
+            `S16: enMBuff = 1'b1;
+            `S17: dequeue = 1'b1;
+            `S18: recover = 1'b1;
         endcase
     end
 
