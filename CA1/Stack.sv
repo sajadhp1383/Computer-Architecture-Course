@@ -9,7 +9,7 @@ module Stack_2bitWide(input clk, rst, Push, Pop, input [1:0] Din,
             ptr <= 0;
             Full <= 0;
             Empty <= 1;
-            Top <= 2'bX;
+            Top <= 2'bx;
         end
         else begin 
 
@@ -18,8 +18,9 @@ module Stack_2bitWide(input clk, rst, Push, Pop, input [1:0] Din,
                 ptr <= ptr +1;
             end
             else if(Pop && !Empty) begin
-                ptr <= ptr -1;
+                ptr <= ptr - 1;
             end
+
             if(ptr > 0)
                 Top <= stack[ptr-1];
             else

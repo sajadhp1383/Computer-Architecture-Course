@@ -2,18 +2,18 @@ module Queue(input clk, rst, enqueue, dequeue, recover, input [1:0] Din, output 
 
     logic [1:0] queue [255:0];      
     logic [1:0] backup_queue [255:0]; 
-    logic [255:0] read_ptr, write_ptr, count, backup_count;
+    logic [7:0] read_ptr, write_ptr, count, backup_count;
 
     always @(posedge clk, rst) begin
         if (rst) begin
             read_ptr <= 0; write_ptr <= 0; count <= 0; full <= 0; empty <= 1; backup_count <= 0;
         end else begin
-            if (enqueue && !full) begin
+            if (enqueue && ~full) begin
                 queue[write_ptr] <= Din;
                 write_ptr <= (write_ptr + 1) % 256;
                 count <= count + 1;
             end
-            if (dequeue && !empty) begin
+            if (dequeue && ~empty) begin
                 Dout <= queue[read_ptr];
                 backup_queue[backup_count] <= queue[read_ptr];
                 backup_count <= backup_count + 1;
