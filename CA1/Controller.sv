@@ -23,14 +23,14 @@ module Rat_Controller(input clk, rst, start, run, invalid, finish, empty1, empty
                       output logic ldC, ldX, ldY, ldR, Izc, IzR, enMBuff, SelMux5, SelMux6, SelMux7, DinMem, push1, pop1, push2, pop2,
                         cen, WR, RD, fail, done, resetDataPath, dequeue, recover);
 
-    reg [3:0] ps, ns;
+    reg [4:0] ps, ns;
     always @(posedge clk) begin
         if (rst) begin
-            ps = 5'b0;
-            resetDataPath = 1'b1;
+            ps <= 5'b0;
+            resetDataPath <= 1'b1;
         end
         else
-            ps = ns;
+            ps <= ns;
     end
 
     always @(ps, start, invalid, finish, empty1, empty2, run, Creg) begin
@@ -71,14 +71,14 @@ module Rat_Controller(input clk, rst, start, run, invalid, finish, empty1, empty
                 ns = `S18;
             `S17: ns = `S16;
             `S18: ns = `S15;
-
-            re
-            
+            default: ns = `S0;
         endcase
     end
 
     always @(ps, start, invalid, finish, empty1, empty2, run, Creg) begin
-        {resetDataPath, ldC, ldR, ldX, ldY, Izc, IzR, SelMux5, enMBuff, SelMux6, SelMux7, DinMem, push1, pop1, push2, pop2, cen, WR, RD, fail, done} = 22'b0;
+        {resetDataPath, ldC, ldR, ldX, ldY, Izc, IzR, SelMux5, enMBuff, SelMux6, SelMux7, DinMem, 
+         push1, pop1, push2, pop2, cen, WR, RD, fail, done, dequeue, recover} = 23'b0;
+
         case(ps)
             `S0: ;
             `S1: resetDataPath = 1'b1;
@@ -99,6 +99,7 @@ module Rat_Controller(input clk, rst, start, run, invalid, finish, empty1, empty
             `S16: enMBuff = 1'b1;
             `S17: dequeue = 1'b1;
             `S18: recover = 1'b1;
+            
         endcase
     end
 
