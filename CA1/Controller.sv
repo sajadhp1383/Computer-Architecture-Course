@@ -19,9 +19,9 @@
 `define S18 5'b10010
 
 
-module Rat_Controller(input clk, rst, start, run, invalid, finish, empty1, empty2, emptyq, full1, full2, enqueue, input [1:0] Creg,
+module Rat_Controller(input clk, rst, start, run, invalid, finish, empty1, empty2, emptyq, full1, full2, input [1:0] Creg,
                       output logic ldC, ldX, ldY, ldR, Izc, IzR, enMBuff, SelMux5, SelMux6, SelMux7, DinMem, push1, pop1, push2, pop2,
-                        cen, WR, RD, fail, done, resetDataPath, dequeue, recover);
+                        cen, WR, RD, fail, done, resetDataPath, enqueue, dequeue, recover);
 
     reg [4:0] ps, ns;
     always @(posedge clk) begin
