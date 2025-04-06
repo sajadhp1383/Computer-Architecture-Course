@@ -1,10 +1,4 @@
-module MAZE_MEM(input clk, RD, WR, Din, input [3:0] X,Y, output logic Dout);
-
-    logic [0:15] Memory [0:15];
-
-    initial begin
-        $readmemb("C:/Users/Erfan/Desktop/ComputerArch/CA/Computer-Architecture-S04/CA1/test/5.txt", Memory);
-    end
+module MAZE_MEM(input clk, RD, WR, Din, input [3:0] X,Y, input logic [0:15]  Memory [0:15], output logic Dout);
 
     always_comb begin
         if (RD)  
