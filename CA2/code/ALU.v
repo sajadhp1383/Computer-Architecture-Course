@@ -1,6 +1,6 @@
 module ALU(a,b,op,aluout,zero);
     input [31:0] a,b;
-    input [3:0] op;
+    input [2:0] op;
     output reg [31:0] aluout;
     output reg zero;
 
