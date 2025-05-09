@@ -10,7 +10,7 @@ module ImmediateExtend(immSrc, in, out);
             3'b010  : out <= {{20{in[24]}}, in[0], in[23:18], in[4:1], 1'b0};
             3'b011  : out <= {in[24:5], {12{1'b0}}};
             3'b100  : out <= {{12{in[24]}}, in[12:5], in[13], in[23:14], 1'b0};
-            default: out = 32'b0; 
+            default: out <= 32'b0; 
 
         endcase
     end
