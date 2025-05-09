@@ -7,7 +7,7 @@
 
 module OP_Controller(op,pcsrc,resultsrc,memWrite,ALUControl,ALUSrc,ImmSrc,regWrite,sel);
     input [6:0] op;
-    output [2:0] ALUControl,ImmSrc;    
+    output reg [2:0] ALUControl,ImmSrc;    
     output reg [1:0] pcsrc,resultsrc;                
     output reg memWrite,ALUSrc,regWrite,sel;
 

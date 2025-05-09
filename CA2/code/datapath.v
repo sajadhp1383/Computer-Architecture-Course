@@ -4,16 +4,16 @@ module datapath(clk,rst,pcsrc,resultsrc,memWrite,ALUControl,ALUSrc,ImmSrc,regWri
     input memWrite,ALUSrc,regWrite,sel;
     input [2:0] ALUControl;
 
-    output reg zero;
-    output reg [2:0] funct3;
-    output reg [6:0] funct7;
-    output reg [3:0] op;
+    output wire zero;
+    output wire [2:0] funct3;
+    output wire [6:0] funct7;
+    output wire [3:0] op;
 
     wire [31:0] PCPlus4,PCNext,PC,PCTarget,result,Instr,ImmExt,SrcA,SrcB,SrcB2,ALUResult,readData;
 
     MUX4to1 MUX1(.in0(PCPlus4),.in1(PCTarget),.in2(ALUResult),.in3(32'b0),.sel(pcsrc),.out(PCNext));
 
-    registor PC(.pcnext(PCNext),.clk(clk),.rst(rst),.out(PC));
+    registor PCreg(.pcnext(PCNext),.clk(clk),.rst(rst),.out(PC));
 
     InstructionMemory IM(.pc(PC),.instruction(Instr));
     assign op = Instr[6:0];
