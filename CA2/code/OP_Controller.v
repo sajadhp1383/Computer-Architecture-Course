@@ -37,7 +37,7 @@ module OP_Controller(op,pcsrc,resultsrc,memWrite,ALUControl,ALUSrc,ImmSrc,regWri
                 memWrite= 1'b1;
                 ALUSrc= 1'b1;
                 ImmSrc = 3'b001;
-                regWrite= 1'b1;
+                regWrite= 1'b1; // ba erfan check beshe
                 sel= 1'b0;
             end
             `J_TYPE:begin
@@ -51,7 +51,7 @@ module OP_Controller(op,pcsrc,resultsrc,memWrite,ALUControl,ALUSrc,ImmSrc,regWri
             end
             `B_TYPE:begin
                 // pcsrc= ; //set in ALU controller
-                resultsrc= ; //dont care
+                // resultsrc= ; //dont care
                 memWrite= 1'b0;
                 ALUSrc= 1'b0;
                 ImmSrc = 3'b010;
