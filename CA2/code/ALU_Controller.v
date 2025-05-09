@@ -19,41 +19,41 @@ module ALU_Controller(zero,funct3,funct7,op,ALU_Controller,pcsrc);
             `R_TYPE:begin
                 case(funct3)
                     2'h00:begin
-                        if(funct7==2) ALUControl=3'b000; //add
-                        else if(funct7==2'h20) ALUControl=3'b001; //sub
+                        if(funct7==2) ALU_Controller=3'b000; //add
+                        else if(funct7==2'h20) ALU_Controller=3'b001; //sub
                     end
-                    2'h06: if(funct7==2'h00) ALUControl=3'b011; //or
-                    2'h07: if(funct7==2'h00) ALUControl=3'b010; //and
-                    2'h02: if(funct7==2'h00) ALUControl=3'b101; //slt
+                    2'h06: if(funct7==2'h00) ALU_Controller=3'b011; //or
+                    2'h07: if(funct7==2'h00) ALU_Controller=3'b010; //and
+                    2'h02: if(funct7==2'h00) ALU_Controller=3'b101; //slt
                 endcase
             end
            `I_TYPE: begin
                 case(funct3)
-                    2'h0: ALUControl = 3'b000; // addi, jalr
-                    2'h6: ALUControl = 3'b011; // ori
-                    2'h2: ALUControl = 3'b101; // slti, lw 
-                    2'h7: ALUControl = 3'b010; // andi
+                    2'h0: ALU_Controller = 3'b000; // addi, jalr
+                    2'h6: ALU_Controller = 3'b011; // ori
+                    2'h2: ALU_Controller = 3'b101; // slti, lw 
+                    2'h7: ALU_Controller = 3'b010; // andi
                 endcase
            end
            `S_TYPE:begin
                 case(funct3)
-                    2'h0: ALUControl = 3'b000; // sw 
+                    2'h0: ALU_Controller = 3'b000; // sw 
                 endcase
            end
             `B_TYPE:begin
                 case(funct3)
                     2'h0:begin // beq
-                        ALUControl = 3'b001; 
+                        ALU_Controller = 3'b001; 
                         pcsrc = zero? 2'b01 : 2'b00; 
                     end
-                    2'h0:begin // bne
-                        ALUControl = 3'b001; 
+                    2'h1:begin // bne
+                        ALU_Controller = 3'b001; 
                         pcsrc = zero? 2'b00 : 2'b01; 
                     end
                 endcase
             end
             `U_TYPE:
-                ALUControl = 3'b110; // lui
+                ALU_Controller = 3'b110; // lui
         endcase
 end
 
