@@ -3,9 +3,9 @@ module top_module(clk,rst);
     wire [2:0] funct3;
     wire [6:0] funct7;
     wire [6:0] op;
-    wire [1:0] pcsrc, resultsrc, immSrc;
+    wire [1:0] pcsrc, resultsrc;
     wire memWrite, aluSrc, regWrite, sel;
-    wire [2:0] ALUControl;
+    wire [2:0] ALUControl, immSrc;
     wire zero;
 
     controller controller_inst(
@@ -36,7 +36,7 @@ module top_module(clk,rst);
         .op(controller_inst.op),
         .funct3(controller_inst.funct3),
         .funct7(controller_inst.funct7),
-        .zero(datapath_inst.zero)
+        .zero(zero)
     );
 
 endmodule

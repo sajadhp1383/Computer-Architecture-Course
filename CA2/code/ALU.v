@@ -11,10 +11,9 @@ module ALU(a,b,op,aluout,zero);
             3'b010: aluout = a & b; //and
             3'b011: aluout = a | b; //or
             3'b101: aluout = (a < b) ? 1 : 0; //slti
-            3'b110: aluout = a << b; //sll
+            3'b110: aluout = b << a; //sll
             default: aluout = 32'b0; 
-        endcase
-
-        zero = (aluout == 32'b0) ? 1 : 0; 
+        endcase 
     end
+    assign zero = (aluout == 32'b0) ? 1 : 0;
 endmodule
