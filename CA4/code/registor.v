@@ -1,5 +1,5 @@
-module Registor(pcnext,clk,rst,out);
-    input [31:0] pcnext;
+module Registor(in,clk,rst,out);
+    input [31:0] in;
     input clk;
     input rst;
     output reg [31:0] out;
@@ -9,7 +9,7 @@ module Registor(pcnext,clk,rst,out);
             out <= 32'b0;
         end 
         else begin
-            out <= pcnext;
+            out <= in;
         end
     end
 endmodule
