@@ -1,12 +1,12 @@
-module Registor(in,clk,rst,out);
-    input [31:0] in;
+module Register #(parameter LEN = 32) (in, clk, rst, out);
+    input [LEN-1:0] in;
     input clk;
     input rst;
-    output reg [31:0] out;
+    output reg [LEN-1:0] out;
     
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            out <= 32'b0;
+            out <= {LEN{1'b0}};
         end 
         else begin
             out <= in;
