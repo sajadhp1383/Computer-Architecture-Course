@@ -14,6 +14,7 @@ module ALU(a,b,op,aluout,zero);
             3'b110: aluout = b << a; //sll
             default: aluout = 32'b0; 
         endcase 
+    
+    zero = (aluout == 32'b0) ? 1 : 0;
     end
-    assign zero = (aluout == 32'b0) ? 1 : 0;
 endmodule
