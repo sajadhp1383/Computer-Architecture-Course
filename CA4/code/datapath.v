@@ -1,8 +1,9 @@
 module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD, RegWriteD, MemWriteD, JumpD, ALUSrcD,
-                ALUControlD, ImmSrcD, ResultSrcD, LuiD, FlushE, Rs1, Rs2, zero, funct3, funct7, op, Rs1E, Rs2E, PCSrcE,RegWriteW);
+                ALUControlD, ImmSrcD, ResultSrcD, LuiD, FlushE, Rs1, Rs2, zero, funct3, funct7, op, Rs1E, Rs2E, PCSrcE,RegWriteW,
+                sel_adderD);
 
     input wire clk, rst, StallF, StallD, FlushD, RegWriteD, MemWriteD, JumpD, ALUSrcD, ForwardAE. ForwardBE;
-    input wire FlushE, LuiD, RegWriteM;
+    input wire FlushE, LuiD, RegWriteM, sel_adderD;
     input wire[2:0] ALUControlD;
     input wire[1:0] ImmSrcD, ResultSrcD, BranchD;
     
@@ -49,6 +50,7 @@ module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD,
 
 /////////////////////////////////////////// ID ///////////////////////////////////////////////////////////////
 
+    wire sel_adderE;
     RegisterFile RF(.clk(clk),.rst(rst),.A1(Rs1D),.A2(Rs2D),.A3(RdD),.WD3(ResultW),.WE3(RegWriteW),.RD1(RD1out),.RD2(RD2out));
     assign Rs1D = InstrD[19:15];
     assign Rs2D = InstrD[24:20];
@@ -88,18 +90,23 @@ module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD,
 
     EnRegister #(1) ID16(.in(LuiD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(LuiE)); 
 
+    EnRegister #(1) ID17(.in(sel_adderD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(sel_adderE)); 
+
 
 /////////////////////////////////////////// End ID ////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////// Exe ////////////////////////////////////////////////////////////
-    MUX3to1  MUX1(.in0(RD1E), .in1(ResultW), .in2(ALUResultM), .sel(ForwardAE), .out(SrcAE));
-    MUX3to1  MUX2(.in0(RD2E), .in1(ResultW), .in2(ALUResultM), .sel(ForwardBE), .out(WriteDataE));
+    wire [31:0] outMuxAdd;
+
+    MUX4to1  MUX1(.in0(RD1E), .in1(ResultW), .in2(ALUResultM), in3(ExtImmM) .sel(ForwardAE), .out(SrcAE));
+    MUX4to1  MUX2(.in0(RD2E), .in1(ResultW), .in2(ALUResultM), in3(ExtImmM), .sel(ForwardBE), .out(WriteDataE));
     MUX2to1  MUX3(.in0(WriteDataE), .in1(ExtImmE), .sel(ALUResultE), .out(SrcBE));
     ALU AluE(.a(SrcAE), .b(SrcBE), op, .aluout(ALUResultE), .zero(ZeroE));
 
     BranchBox brbox(.Zero(ZeroE), .Branch(BranchE), .Jump(JumpE), .PCSrc(PCSrcE));
 
-    Adder adderE(.a(PCE), .b(ExtImmE), .w(PCTargetE));
+    MUX2to1 MuxAdder(.in0(ExtImmE), .in1(RD1E), .sel(sel_adderE), .out(outMuxAdd));
+    Adder adderE(.a(PCE), .b(outMuxAdd), .w(PCTargetE));
 
     EnRegister #(1) Exe1(.in(RegWriteE), .clk(clk), .rst(rst), .en(1'b1), .clr(1'b0), .out(RegWriteM));
 
@@ -128,8 +135,6 @@ module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD,
     wire RdW;
 
     DataMemory dataMem(.clk(clk), .memWrite(MemWriteM), .addr(ALUResultM), .writeData(WriteDataM), .readData(ReadDataM));
-
-    MUX2to1_5bit Mux4(.in0(ALUResultM), .in1(RdM), .sel(LuiM), .out());
 
     EnRegister #(1) M1(.in(RegWriteM), .clk(clk), .rst(rst), .en(1'b1), .clr(1'b0), .out(RegWriteW));
 

@@ -1,36 +1,24 @@
-module Hazard_Unit(StallF, StallD, FlushD, Rs1D, Rs2D, FlushE, RdE, Rs1E,
-                    Rs2E, PCSrcE, ForwardAE, ForwardBE, ResultSrcE, RdM,
-                    RegWriteM, RdW, RegWriteW);
+module HazardUnit(input RegWriteM,RegWriteW,input[1:0] ResultSrcE,PCSrcE,ResultSrcM,ResultSrcW ,input[4:0] Rs1D,Rs2D,Rs1E,Rs2E,RdE,RdM,RdW,
+	output StallF,StallD,FlushD,FlushE,output[1:0] ForwardAE,ForwardBE);
 
-    input Rs1D, Rs2D, Rs1E, Rs2E, RdE, PCSrcE, ResultSrcE, RdM,
-            RegWriteM, RdW, RegWriteW;
-    output StallF, StallD, FlushD, FlushE, ForwardAE, ForwardBE;
+	wire lwStall;
+	assign ForwardAE=((Rs1E==RdM && RegWriteM)&&Rs1E!=0)?2'b10:
+			 (((Rs1E==RdW && RegWriteW)&&Rs1E!=0) || (Rs1E==RdW && ResultSrcW==2'b11 && Rs1E!=0))?2'b01:
+			(Rs1E==RdM && ResultSrcM==2'b11 && Rs1E!=0)?2'b11:
+			 2'b00;
+	assign ForwardBE=((Rs2E==RdM && RegWriteM) && Rs2E!=0)?2'b10:
+			(((Rs2E==RdW && RegWriteW) && Rs2E!=0) || (Rs2E==RdW && ResultSrcW==2'b11 && Rs2E!=0))?2'b01:
+			 (Rs2E==RdM && ResultSrcM==2'b11 && Rs2E!=0)?2'b11:
+			 2'b00;
 
-    always @(Rs1E, RdM, RegWriteM) begin
-        if((Rs1E == RdM) & RegWriteM) & (Rs1E != 0)
-            ForwardAE = 2'b10;
-        else if((Rs1E == RdW) & RegWriteW) & (Rs1E != 0)
-            ForwardAE = 2'b01;
-        else
-            ForwardAE = 2'b00;
-    end
+	assign lwStall=((Rs1D==RdE)||(Rs2D==RdE)) && ResultSrcE==2'b01;
+    
+	assign StallF=lwStall;
 
-    always @(Rs2E, RdM, RegWriteM) begin
-        if((Rs2E == RdM) & RegWriteM) & (Rs2E != 0)
-            ForwardBE = 2'b10;
-        else if((Rs2E == RdW) & RegWriteW) & (Rs2E != 0)
-            ForwardBE = 2'b01;
-        else
-            ForwardBE = 2'b00;
-    end
+	assign StallD=lwStall;
 
-    wire lwStall;
+	assign FlushE=lwStall || (PCSrcE==2'b01) || (PCSrcE==2'b10);
 
-    assign lwStall = ResultSrcE & ((Rs1D == RdE) | (Rs2D == RdE));
-    assign StallF = lwStall;
-    assign StallD = lwStall;
-
-    assign FlushD = PCSrcE;
-    assign FlushE = lwStall | PCSrcE;
+	assign FlushD=(PCSrcE==2'b01) ? 1 : 0;
 
 endmodule

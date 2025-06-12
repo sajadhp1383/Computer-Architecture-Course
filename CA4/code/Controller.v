@@ -1,11 +1,11 @@
 
 module controller(op, funct3, funct7, ResultSrcD, MemWriteD, ALUControlD,
-                    ALUSrcD, ImmSrcD, RegWriteD, BranchD, JumpD);
+                    ALUSrcD, ImmSrcD, RegWriteD, BranchD, JumpD, sel_adder);
     input [2:0] funct3;
     input [6:0] op, funct7;
     output wire [1:0] ResultSrcD;                
     output wire [2:0] ALUControlD, ImmSrcD;
-    output wire MemWriteD, ALUSrcD, RegWriteD;
+    output wire MemWriteD, ALUSrcD, RegWriteD, sel_adder;
 
     ALU_Controller ALU_Controller_inst(
         .funct3(funct3),
@@ -20,6 +20,7 @@ module controller(op, funct3, funct7, ResultSrcD, MemWriteD, ALUControlD,
         .MemWriteD(MemWriteD),
         .ALUSrcD(ALUSrcD),
         .ImmSrcD(ImmSrcD),
-        .RegWriteD(RegWriteD)
+        .RegWriteD(RegWriteD),
+        .sel_adder(sel_adder)
     );
 endmodule

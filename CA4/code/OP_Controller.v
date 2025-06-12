@@ -8,12 +8,12 @@
 `define JALR 7'b1100111
 
 module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
-                     JumpD, BranchD, ImmSrcD, ALUSrcD);
+                     JumpD, BranchD, ImmSrcD, ALUSrcD, sel_adder);
     input [6:0] op;
     input [2:0] funct3;
     output reg [2:0] ImmSrcD;    
     output reg [1:0] ResultSrcD, BranchD; 
-    output reg RegWriteD, ALUSrcD, RegWriteD, JumpD, MemWriteD;
+    output reg RegWriteD, ALUSrcD, RegWriteD, JumpD, MemWriteD, sel_adder;
 
     always @(op, zero) begin
         case(op)
@@ -31,7 +31,6 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
                 RegWriteD= 1'b1;
             end
             `S_TYPE:begin
-                // ResultSrcD = ; //dont care
                 MemWriteD= 1'b1;
                 ALUSrcD= 1'b1;
                 ImmSrcD = 3'b001;
@@ -40,13 +39,11 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
             `J_TYPE:begin
                 ResultSrcD = 2'b10;
                 MemWriteD = 1'b0;
-                // ALUSrcD = ; //dont care
                 ImmSrcD = 3'b100;
                 RegWriteD= 1'b1;
                 JumpD = 1'b1;
             end
             `B_TYPE:begin
-                // ResultSrcD = ; //dont care
                 MemWriteD= 1'b0;
                 ALUSrcD= 1'b0;
                 ImmSrcD = 3'b010;
