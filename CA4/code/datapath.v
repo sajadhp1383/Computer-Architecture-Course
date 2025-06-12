@@ -1,22 +1,31 @@
 module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD, RegWriteD, MemWriteD, JumpD, ALUSrcD,
-                ALUControlD, ImmSrcD, ResultSrcD, LuiD, FlushE, Rs1, Rs2);
+                ALUControlD, ImmSrcD, ResultSrcD, LuiD, FlushE, Rs1, Rs2, zero, funct3, funct7, op, Rs1E, Rs2E, PCSrcE,RegWriteW);
 
     input wire clk, rst, StallF, StallD, FlushD, RegWriteD, MemWriteD, JumpD, ALUSrcD, ForwardAE. ForwardBE;
-    input wire FlushE,LuiD;
+    input wire FlushE, LuiD, RegWriteM;
     input wire[2:0] ALUControlD;
     input wire[1:0] ImmSrcD, ResultSrcD, BranchD;
     
-    output [4:0] Rs1, Rs2;
-
+    output [4:0] Rs1, Rs2, RdE, Rs1E, Rs2E, Rdm;
+    output [1:0] BranchE, ResultSrcE;
+    output PCSrcE;
     wire [31:0] PCPlus4F, PCTargetE, PCFprim, PCF, InstructionMemoryOut, ResultW, RD1out, RD2out, ExtImmD, PCPlus4E;
     wire [31:0] ExtImmE, PCPlus4D, InstrD, PCD, SrcAE, WriteDataE, SrcBE, ALUResultM, ALUResultE, PCE, ExtImmM, PCPlus4M;
     wire [31:0] RD1D, RD2D, RD1E, RD2E, WriteDataM;
-    wire [4:0] Rs1D, Rs2D, RdD, Rs1E, Rs2E, RdE, RdM;
+    wire [4:0] Rs1D, Rs2D, RdD;
     wire [2:0] ALUControlE;
-    wire [1:0] BranchE, ResultSrcE, ResultSrcM;
-    wire RegWriteE, MemWriteE, JumpE, ALUSrcE, LuiE, ZeroE, Zero, Branch, Jump, PCSrc;
-    wire RegWriteM, MemWriteM, LuiM, RegWriteW;
+    wire [1:0] , ResultSrcM;
+    wire RegWriteE, MemWriteE, JumpE, ALUSrcE, LuiE, ZeroE, Zero, Branch, Jump;
+    wire MemWriteM, LuiM;
 
+    output wire zero;
+    output wire [2:0] funct3;
+    output wire [6:0] funct7;
+    output wire [6:0] op;
+
+    assign op = Instr[6:0];
+    assign funct3 = Instr[14:12];
+    assign funct7 = Instr[31:25];
 
 /////////////////////////////////////////// IF ///////////////////////////////////////////////////////////////
     
@@ -55,29 +64,29 @@ module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD,
 
     EnRegister #(5) ID4(.in(Rs2D), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(Rs2E));
 
-    EnRegister #(32) ID4(.in(PCD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(PCE));  
+    EnRegister #(32) ID5(.in(PCD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(PCE));  
 
-    EnRegister #(5) ID5(.in(RdD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(RdE)); 
+    EnRegister #(5) ID6(.in(RdD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(RdE)); 
 
-    EnRegister #(32) ID6(.in(RD1D), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(RD1E)); 
+    EnRegister #(32) ID7(.in(RD1D), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(RD1E)); 
 
-    EnRegister #(32) ID7(.in(RD2D), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(RD2E)); 
+    EnRegister #(32) ID8(.in(RD2D), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(RD2E)); 
 
-    EnRegister #(3) ID8(.in(ALUControlD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(ALUControlE));
+    EnRegister #(3) ID9(.in(ALUControlD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(ALUControlE));
     
-    EnRegister #(2) ID9(.in(BranchD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(BranchE)); 
+    EnRegister #(2) ID10(.in(BranchD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(BranchE)); 
 
-    EnRegister #(1) ID10(.in(JumpD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(JumpE)); 
+    EnRegister #(1) ID11(.in(JumpD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(JumpE)); 
 
-    EnRegister #(1) ID11(.in(MemWriteE), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(MemWriteE));
+    EnRegister #(1) ID12(.in(MemWriteE), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(MemWriteE));
 
-    EnRegister #(2) ID12(.in(ResultSrcD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(ResultSrcE));
+    EnRegister #(2) ID13(.in(ResultSrcD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(ResultSrcE));
 
-    EnRegister #(1) ID13(.in(RegWriteD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(RegWriteE)); 
+    EnRegister #(1) ID14(.in(RegWriteD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(RegWriteE)); 
 
-    EnRegister #(1) ID14(.in(ALUSrcD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(ALUSrcE));
+    EnRegister #(1) ID15(.in(ALUSrcD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(ALUSrcE));
 
-    EnRegister #(1) ID15(.in(LuiD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(LuiE)); 
+    EnRegister #(1) ID16(.in(LuiD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(LuiE)); 
 
 
 /////////////////////////////////////////// End ID ////////////////////////////////////////////////////////////
