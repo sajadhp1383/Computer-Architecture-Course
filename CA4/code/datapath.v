@@ -1,21 +1,21 @@
 module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD, RegWriteD, MemWriteD, JumpD, ALUSrcD,
                 ALUControlD, ImmSrcD, ResultSrcD, LuiD, FlushE, Rs1, Rs2, zero, funct3, funct7, op, Rs1E, Rs2E, PCSrcE,RegWriteW,
-                sel_adderD);
+                sel_adderD,RdE,Rdm,BranchE,RegWriteM,ResultSrcE);
 
-    input wire clk, rst, StallF, StallD, FlushD, RegWriteD, MemWriteD, JumpD, ALUSrcD, ForwardAE. ForwardBE;
+    input wire clk, rst, StallF, StallD, FlushD, RegWriteD, MemWriteD, JumpD, ALUSrcD, ForwardAE, ForwardBE;
     input wire FlushE, LuiD, RegWriteM, sel_adderD;
     input wire[2:0] ALUControlD;
     input wire[1:0] ImmSrcD, ResultSrcD, BranchD;
     
     output [4:0] Rs1, Rs2, RdE, Rs1E, Rs2E, Rdm;
     output [1:0] BranchE, ResultSrcE;
-    output PCSrcE;
+    output PCSrcE, RegWriteW;
     wire [31:0] PCPlus4F, PCTargetE, PCFprim, PCF, InstructionMemoryOut, ResultW, RD1out, RD2out, ExtImmD, PCPlus4E;
     wire [31:0] ExtImmE, PCPlus4D, InstrD, PCD, SrcAE, WriteDataE, SrcBE, ALUResultM, ALUResultE, PCE, ExtImmM, PCPlus4M;
     wire [31:0] RD1D, RD2D, RD1E, RD2E, WriteDataM;
     wire [4:0] Rs1D, Rs2D, RdD;
     wire [2:0] ALUControlE;
-    wire [1:0] , ResultSrcM;
+    wire [1:0] ResultSrcM;
     wire RegWriteE, MemWriteE, JumpE, ALUSrcE, LuiE, ZeroE, Zero, Branch, Jump;
     wire MemWriteM, LuiM;
 
@@ -24,9 +24,9 @@ module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD,
     output wire [6:0] funct7;
     output wire [6:0] op;
 
-    assign op = Instr[6:0];
-    assign funct3 = Instr[14:12];
-    assign funct7 = Instr[31:25];
+    assign op = InstructionMemoryOut[6:0];
+    assign funct3 = InstructionMemoryOut[14:12];
+    assign funct7 = InstructionMemoryOut[31:25];
 
 /////////////////////////////////////////// IF ///////////////////////////////////////////////////////////////
     
@@ -98,10 +98,10 @@ module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD,
 /////////////////////////////////////////// Exe ////////////////////////////////////////////////////////////
     wire [31:0] outMuxAdd;
 
-    MUX4to1  MUX1(.in0(RD1E), .in1(ResultW), .in2(ALUResultM), in3(ExtImmM) .sel(ForwardAE), .out(SrcAE));
-    MUX4to1  MUX2(.in0(RD2E), .in1(ResultW), .in2(ALUResultM), in3(ExtImmM), .sel(ForwardBE), .out(WriteDataE));
+    MUX4to1  MUX1(.in0(RD1E), .in1(ResultW), .in2(ALUResultM), .in3(ExtImmM), .sel(ForwardAE), .out(SrcAE));
+    MUX4to1  MUX2(.in0(RD2E), .in1(ResultW), .in2(ALUResultM), .in3(ExtImmM), .sel(ForwardBE), .out(WriteDataE));
     MUX2to1  MUX3(.in0(WriteDataE), .in1(ExtImmE), .sel(ALUResultE), .out(SrcBE));
-    ALU AluE(.a(SrcAE), .b(SrcBE), op, .aluout(ALUResultE), .zero(ZeroE));
+    ALU AluE(.a(SrcAE), .b(SrcBE), .op(op), .aluout(ALUResultE), .zero(ZeroE));
 
     BranchBox brbox(.Zero(ZeroE), .Branch(BranchE), .Jump(JumpE), .PCSrc(PCSrcE));
 
