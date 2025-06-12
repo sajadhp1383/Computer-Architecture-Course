@@ -1,16 +1,38 @@
-E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v
+E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module InstructionMemory
+-- Compiling module DataMemory
 
 Top level modules:
-	InstructionMemory
+	DataMemory
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Controller.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Controller.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module ImmediateExtend
+-- Compiling module controller
 
 Top level modules:
-	ImmediateExtend
+	controller
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v {2 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ALU_Controller
+** Warning: E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v(22): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+** Warning: E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v(26): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+** Warning: E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v(27): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+** Warning: E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v(28): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+
+Top level modules:
+	ALU_Controller
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/TB.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/TB.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TEST_RISCV
+
+Top level modules:
+	TEST_RISCV
 
 } {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -19,19 +41,37 @@ Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 Top level modules:
 	datapath
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/BranchBox.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/BranchBox.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module DataMemory
+-- Compiling module BranchBox
 
 Top level modules:
-	DataMemory
+	BranchBox
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/OP_Controller.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/OP_Controller.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Adder
+-- Compiling module Control_Unit
 
 Top level modules:
-	Adder
+	Control_Unit
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module MUX3to1
+-- Compiling module MUX2to1
+-- Compiling module MUX4to1
+
+Top level modules:
+	MUX3to1
+	MUX2to1
+	MUX4to1
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ALU
+
+Top level modules:
+	ALU
 
 } {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
@@ -49,11 +89,32 @@ Top level modules:
 	Register
 	EnRegister
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v
 Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module ALU
+-- Compiling module ImmediateExtend
 
 Top level modules:
-	ALU
+	ImmediateExtend
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/top_module.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/top_module.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module riscv_processor
+
+Top level modules:
+	riscv_processor
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Hazard_Unit.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Hazard_Unit.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module HazardUnit
+
+Top level modules:
+	HazardUnit
 
 } {} {}}
