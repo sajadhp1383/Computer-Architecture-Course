@@ -2,7 +2,7 @@ module riscv_processor(clk,rst);
     input clk,rst;
 
     wire clk, rst, StallF, StallD, FlushD, RegWriteD, MemWriteD, JumpD, ALUSrcD, ForwardAE, ForwardBE;
-    wire FlushE, LuiD, zero, PCSrcE;
+    wire FlushE, LuiD, zero, PCSrcE, sel_adderD, RegWriteW, RegWriteM;
     wire [2:0] ALUControlD, funct3;
     wire [1:0] ImmSrcD, ResultSrcD, BranchD, ResultSrcE;
     wire [4:0] Rs1, Rs2, RdE, Rs1E, Rs2E, RdM;
@@ -10,42 +10,41 @@ module riscv_processor(clk,rst);
     wire [1:0] BranchE;
 
     datapath dp(
-        .clk(clk),
-        .rst(rst),
-        .StallF(StallF),
-        .StallD(StallD),
-        .ForwardAE(ForwardAE),
-        .ForwardBE(ForwardBE),
-        .FlushD(FlushD), 
-        .BranchD(BranchD), 
-        .RegWriteD(RegWriteD), 
-        .MemWriteD(MemWriteD), 
-        .JumpD(JumpD), 
-        .ALUSrcD(ALUSrcD),
-        .ALUControlD(ALUControlD), 
-        .ImmSrcD(ImmSrcD), 
-        .ResultSrcD(ResultSrcD), 
-        .LuiD(LuiD), 
-        .FlushE(FlushE), 
-        .Rs1(Rs1), 
-        .Rs2(Rs2),
-        .RdE(RdE),
-        .Rs1E(Rs1E),
-        .Rs2E(Rs2E),
-        .zero(zero),
-        .funct3(funct3),
-        .funct7(funct7), 
-        .op(op),
-        .BranchE(BranchE),
-        .PCSrcE(PCSrcE),
-        .ResultSrcE(ResultSrcE),
-        .RdM(RdM),
-        .RegWriteW(RegWriteW)
-    );
+    .clk(clk),
+    .rst(rst),
+    .StallF(StallF),
+    .StallD(StallD),
+    .ForwardAE(ForwardAE),
+    .ForwardBE(ForwardBE),
+    .FlushD(FlushD), 
+    .BranchD(BranchD), 
+    .RegWriteD(RegWriteD), 
+    .MemWriteD(MemWriteD), 
+    .JumpD(JumpD), 
+    .ALUSrcD(ALUSrcD),
+    .ALUControlD(ALUControlD), 
+    .ImmSrcD(ImmSrcD), 
+    .ResultSrcD(ResultSrcD), 
+    .LuiD(LuiD), 
+    .FlushE(FlushE), 
+    .Rs1(Rs1), 
+    .Rs2(Rs2),
+    .RdE(RdE),
+    .Rs1E(Rs1E),
+    .Rs2E(Rs2E),
+    .zero(zero),
+    .funct3(funct3),
+    .funct7(funct7), 
+    .op(op),
+    .BranchE(BranchE),
+    .PCSrcE(PCSrcE),
+    .ResultSrcE(ResultSrcE),
+    .Rdm(RdM),               
+    .RegWriteM(RegWriteM),   
+    .RegWriteW(RegWriteW),
+    .sel_adderD(sel_adderD)
+);
 
-    wire [1:0] ResultSrcD;                
-    wire [2:0] ALUControlD, ImmSrcD;
-    wire MemWriteD, ALUSrcD, RegWriteD;
 
     controller con(
         .op(op),
@@ -61,7 +60,7 @@ module riscv_processor(clk,rst);
         .JumpD(JumpD)
     );
 
-    Hazard_Unit hazard_unit(
+    HazardUnit hazard_unit(
         .StallF(StallF),
         .StallD(StallD),
         .FlushD(FlushD),
