@@ -9,7 +9,7 @@ module InstructionMemory(pc, instruction);
   assign adr = {pc[31:2], 2'b00};
 
   initial begin
-    $readmemh("instructions.mem", instructionMemory);
+    $readmemh("../code/instructions.mem", instructionMemory);
   end
 
 
