@@ -1,8 +1,8 @@
 module Hazard_Unit(StallF, StallD, FlushD, Rs1D, Rs2D, FlushE, RdE, Rs1E,
-                    Rs2E, PCSrcE, ForwardAE, ForwardBE, ResultSrcE0, RdM,
+                    Rs2E, PCSrcE, ForwardAE, ForwardBE, ResultSrcE, RdM,
                     RegWriteM, RdW, RegWriteW);
 
-    input Rs1D, Rs2D, Rs1E, Rs2E, RdE, PCSrcE, ResultSrcE0, RdM,
+    input Rs1D, Rs2D, Rs1E, Rs2E, RdE, PCSrcE, ResultSrcE, RdM,
             RegWriteM, RdW, RegWriteW;
     output StallF, StallD, FlushD, FlushE, ForwardAE, ForwardBE;
 
@@ -26,7 +26,7 @@ module Hazard_Unit(StallF, StallD, FlushD, Rs1D, Rs2D, FlushE, RdE, Rs1E,
 
     wire lwStall;
 
-    assign lwStall = ResultSrcE0 & ((Rs1D == RdE) | (Rs2D == RdE));
+    assign lwStall = ResultSrcE & ((Rs1D == RdE) | (Rs2D == RdE));
     assign StallF = lwStall;
     assign StallD = lwStall;
 
