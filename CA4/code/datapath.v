@@ -1,10 +1,10 @@
 module datapath(clk, rst, StallF, StallD, RegWriteW, FlushD, BranchD, RegWriteD, MemWriteD, JumpD, ALUSrcD,
                 ALUControlD, ImmSrcD, ResultSrcD, LuiD, FlushE, Rs1, Rs2);
 
-    input wire clk, rst, StallF, StallD, RegWriteW, FlushD, BranchD, RegWriteD, MemWriteD, JumpD, ALUSrcD;
+    input wire clk, rst, StallF, StallD, RegWriteW, FlushD, RegWriteD, MemWriteD, JumpD, ALUSrcD;
     input wire FlushE,LuiD;
     input wire[2:0] ALUControlD;
-    input wire[1:0] ImmSrcD, ResultSrcD;
+    input wire[1:0] ImmSrcD, ResultSrc0D, BranchD;
     
     output [4:0] Rs1, Rs2;
 
@@ -13,7 +13,8 @@ module datapath(clk, rst, StallF, StallD, RegWriteW, FlushD, BranchD, RegWriteD,
     wire [31:0] RD1D, RD2D, RD1E, RD2E;
     wire [4:0] Rs1D, Rs2D, RdD, Rs1E, Rs2E, RdE;
     wire [2:0] ALUControlE;
-    wire RegWriteE, BranchE, MemWriteE, JumpE, ALUSrcE, LuiE;
+    wire [1:0] BranchE;
+    wire RegWriteE, MemWriteE, JumpE, ALUSrcE, LuiE;
 
 /////////////////////////////////////////// IF ///////////////////////////////////////////////////////////////
     
@@ -60,7 +61,7 @@ module datapath(clk, rst, StallF, StallD, RegWriteW, FlushD, BranchD, RegWriteD,
 
     EnRegister #(3) ID8(.in(ALUControlD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(ALUControlE));
     
-    EnRegister #(1) ID9(.in(BranchD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(BranchE)); 
+    EnRegister #(2) ID9(.in(BranchD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(BranchE)); 
 
     EnRegister #(1) ID10(.in(JumpD), .clk(clk), .rst(rst), .en(1'b1), .clr(FlushE), .out(JumpE)); 
 
@@ -77,13 +78,5 @@ module datapath(clk, rst, StallF, StallD, RegWriteW, FlushD, BranchD, RegWriteD,
 
 /////////////////////////////////////////// End ID ////////////////////////////////////////////////////////////
     
- 
- 
-    
-
- 
-
-
-
 
 endmodule

@@ -12,8 +12,8 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
     input [6:0] op;
     input [2:0] funct3;
     output reg [2:0] ImmSrcD;    
-    output reg [1:0] ResultSrcD; 
-    output reg RegWriteD, ALUSrcD, RegWriteD, JumpD, BranchD, MemWriteD;
+    output reg [1:0] ResultSrcD, BranchD; 
+    output reg RegWriteD, ALUSrcD, RegWriteD, JumpD, MemWriteD;
 
     always @(op, zero) begin
         case(op)
@@ -40,9 +40,10 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
             `J_TYPE:begin
                 ResultSrcD = 2'b10;
                 MemWriteD = 1'b0;
-                // ALUSrcD= ; //dont care
+                // ALUSrcD = ; //dont care
                 ImmSrcD = 3'b100;
                 RegWriteD= 1'b1;
+                JumpD = 1'b1;
             end
             `B_TYPE:begin
                 // ResultSrcD = ; //dont care
