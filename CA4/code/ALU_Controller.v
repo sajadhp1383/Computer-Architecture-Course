@@ -20,7 +20,7 @@ module ALU_Controller(funct3, funct7, op, ALUControlD);
             `R_TYPE:begin
                 case(funct3)
                     3'h00:begin
-                        if(funct7==7'h0) ALUControlD=3'b0; //add
+                        if(funct7==7'h00) ALUControlD=3'b000; //add
                         else if(funct7==7'h20) ALUControlD=3'b001; //sub
                     end
                     3'h06: if(funct7==7'h00) ALUControlD=3'b011; //or
