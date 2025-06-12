@@ -13,9 +13,9 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
     input [2:0] funct3;
     output reg [2:0] ImmSrcD;    
     output reg [1:0] ResultSrcD, BranchD; 
-    output reg RegWriteD, ALUSrcD, RegWriteD, JumpD, MemWriteD, sel_adder;
+    output reg RegWriteD, ALUSrcD, JumpD, MemWriteD, sel_adder;
 
-    always @(op, zero) begin
+    always @(op) begin
         case(op)
             `R_TYPE:begin
                 ResultSrcD = 2'b00;
