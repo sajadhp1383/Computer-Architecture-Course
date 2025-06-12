@@ -20,6 +20,6 @@ module controller(op, funct3, funct7, ResultSrcD, MemWriteD, ALUControlD,
         .MemWriteD(MemWriteD),
         .ALUSrcD(ALUSrcD),
         .ImmSrcD(ImmSrcD),
-        .RegWriteD(RegWriteD),
+        .RegWriteD(RegWriteD)
     );
 endmodule

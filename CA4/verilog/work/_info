@@ -1,0 +1,244 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\UT\DLD_Lab\EXP4\modelsim
+vAdder
+Z1 !s100 ozmOM[YjIF9SX3keh[:A01
+Z2 Id@WAElmJdVKngnJ0fTLaS1
+Z3 V<X5HhbbCOe6X^CW1bA1=o1
+Z4 dE:\UT\CA\Computer-Architecture-Spring2025\CA4\verilog
+Z5 w1749449567
+Z6 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v
+Z7 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v
+L0 1
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v|
+Z10 o-work work -O0
+Z11 n@adder
+Z12 !s108 1749576179.949000
+Z13 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vALU
+Z14 !s100 :3[jffBVF2[;130TbZNTA1
+Z15 IlVBO^<N[Igm][oCEUIWXN0
+Z16 V>`:Lc5TR4b^X[C]eQ?9?]2
+R4
+Z17 w1749576008
+Z18 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v
+Z19 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v
+L0 1
+R8
+r1
+31
+Z20 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v|
+R10
+Z21 n@a@l@u
+Z22 !s108 1749576180.044000
+Z23 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vALU_Controller
+Z24 !s100 0TDZ5NA8?MXYAmnQ978E:0
+Z25 Ik^fGS27P^lV]C_:I@n[L:3
+Z26 VXiWMXleF:CeIL<@NIm_^d1
+R4
+R5
+Z27 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v
+Z28 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v
+L0 12
+R8
+r1
+31
+Z29 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v|
+R10
+Z30 n@a@l@u_@controller
+Z31 !s108 1749576180.124000
+Z32 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vDataMemory
+Z33 !s100 n^ojM8cNI>AmJE4H4i:AJ2
+Z34 I43[@WSoBN0mF_Th=?ZIXF1
+Z35 V9Eba9cUWg6QIldmkbNcIz2
+R4
+R5
+Z36 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v
+Z37 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v
+L0 1
+R8
+r1
+31
+Z38 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v|
+R10
+Z39 n@data@memory
+Z40 !s108 1749576180.197000
+Z41 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vdatapath
+Z42 I[ZPOCFza:N6AMg=72EOzX3
+Z43 VJoOzMV:h9IMhehXOQVz0L0
+R4
+Z44 w1749576174
+Z45 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v
+Z46 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v
+L0 1
+R8
+r1
+31
+R10
+Z47 !s100 PKTQ_>NRSMeIROjG7cZ5m0
+Z48 !s108 1749576180.265000
+Z49 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v|
+Z50 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vEnRegister
+Z51 !s100 04DTn9k<YXM86;z`4kQAG1
+Z52 IG@UNX@l64lnR95J:`L[iK0
+Z53 V4XH?dD^WT<A3V^>SgOEcb0
+R4
+Z54 w1749455224
+Z55 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v
+Z56 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v
+L0 17
+R8
+r1
+31
+Z57 !s108 1749576180.621000
+Z58 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v|
+Z59 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v|
+R10
+Z60 n@en@register
+!i10b 1
+!s85 0
+!s101 -O0
+vImmediateExtend
+Z61 !s100 L[0BXhe`O_6]=4H]NXfae0
+Z62 IJNBUFKY=hTlWTfabVANnJ1
+Z63 VKaFa7FeNMzbB<L42NbVJS0
+R4
+R5
+Z64 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v
+Z65 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v
+L0 1
+R8
+r1
+31
+Z66 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v|
+R10
+Z67 n@immediate@extend
+Z68 !s108 1749576180.392000
+Z69 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vInstructionMemory
+Z70 !s100 f:^YWEzjABfW9JcmJiUID1
+Z71 IDbJ=OFCl5bh5lQ<mXikB_1
+Z72 V`Sd2h3f=X09dZ[6dMODS42
+R4
+R5
+Z73 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v
+Z74 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v
+L0 1
+R8
+r1
+31
+Z75 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v|
+R10
+Z76 n@instruction@memory
+Z77 !s108 1749576180.468000
+Z78 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMUX2to1
+Z79 !s100 ^7@<cA;LeJ0Wf9U>cSA8R2
+Z80 IV?S]E^YE9@3UNZH7el;Uh0
+Z81 Vh315HFiAK3Y8bY]<d;V:J1
+R4
+Z82 w1749576055
+Z83 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v
+Z84 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v
+L0 11
+R8
+r1
+31
+Z85 !s108 1749576180.545000
+Z86 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v|
+Z87 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v|
+R10
+Z88 n@m@u@x2to1
+!i10b 1
+!s85 0
+!s101 -O0
+vMUX3to1
+Z89 !s100 YBCI[VSNP=UJTSgCHVCZF3
+Z90 I`oN=5OJL?ZWea>^0Zec0d1
+Z91 V8G1jGBfeIoV]h<g9CoW^_1
+R4
+R82
+R83
+R84
+L0 1
+R8
+r1
+31
+R85
+R86
+R87
+R10
+Z92 n@m@u@x3to1
+!i10b 1
+!s85 0
+!s101 -O0
+vRegister
+Z93 !s100 ;9:A;feBSmAlz]=1>0Hj53
+Z94 I<ePzjjgI6aa0^V:M[@B[W3
+Z95 V>:iz1jYA0VG>M?[`h>?^o1
+R4
+R54
+R55
+R56
+L0 1
+R8
+r1
+31
+R57
+R58
+R59
+R10
+Z96 n@register
+!i10b 1
+!s85 0
+!s101 -O0
+vRegisterFile
+!i10b 1
+Z97 !s100 R<HJWah8RG76kEIP1SQ>42
+Z98 I=ATHFInH@E8ZDUo8YUNAm2
+Z99 VV?jWZ5`7TnADMCEkkVIN?1
+R4
+Z100 w1749453885
+Z101 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v
+Z102 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1749576180.700000
+!s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v|
+Z103 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v|
+!s101 -O0
+R10
+Z104 n@register@file

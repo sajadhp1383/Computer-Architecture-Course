@@ -1,0 +1,59 @@
+E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module InstructionMemory
+
+Top level modules:
+	InstructionMemory
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ImmediateExtend
+
+Top level modules:
+	ImmediateExtend
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module datapath
+
+Top level modules:
+	datapath
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module DataMemory
+
+Top level modules:
+	DataMemory
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Register
+-- Compiling module EnRegister
+
+Top level modules:
+	Register
+	EnRegister
+
+} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}}
