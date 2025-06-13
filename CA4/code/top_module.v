@@ -58,7 +58,7 @@ module riscv_processor(clk,rst);
         .RegWriteD(RegWriteD),
         .BranchD(BranchD),
         .JumpD(JumpD),
-        .sel_adder(sel_adderD)
+        .sel_adderD(sel_adderD)
     );
 
     HazardUnit hazard_unit(

@@ -24,6 +24,7 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
                 RegWriteD= 1'b1;
                 JumpD = 1'b0;
                 BranchD= 2'b0;
+                sel_adder = 1'b0;
                 end
             `I_TYPE:begin
                 ResultSrcD = 2'b00;
@@ -33,6 +34,7 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
                 RegWriteD= 1'b1;
                 JumpD = 1'b0;
                 BranchD= 2'b0;
+                sel_adder = 1'b0;
             end
             `S_TYPE:begin
                 MemWriteD= 1'b1;
@@ -41,6 +43,7 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
                 RegWriteD= 1'b0;
                 JumpD = 1'b0;
                 BranchD= 2'b0;
+                sel_adder = 1'b0;
             end
             `J_TYPE:begin
                 ResultSrcD = 2'b10;
@@ -49,6 +52,7 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
                 RegWriteD= 1'b1;
                 JumpD = 1'b1;
                 BranchD= 2'b0;
+                sel_adder = 1'b0;
             end
             `B_TYPE:begin
                 MemWriteD= 1'b0;
@@ -57,6 +61,7 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
                 RegWriteD = 1'b0;
                 BranchD = (funct3 == 3'b0) ? 2'b01 : 2'b10;
                 JumpD = 1'b0;
+                sel_adder = 1'b0;
             end
             `U_TYPE:begin
                 ResultSrcD = 2'b00;
@@ -66,6 +71,7 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
                 RegWriteD= 1'b1;
                 JumpD = 1'b0;
                 BranchD= 2'b0;
+                sel_adder = 1'b0;
             end
             `LW: begin
                 ResultSrcD  = 2'b01;
@@ -75,6 +81,7 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
                 RegWriteD = 1'b1;
                 JumpD = 1'b0;
                 BranchD= 2'b0;
+                sel_adder = 1'b0;
             end
             `JALR: begin
                 ResultSrcD = 2'b10;
@@ -84,9 +91,11 @@ module Control_Unit(op, funct3, RegWriteD, ResultSrcD, MemWriteD,
                 RegWriteD = 1'b1;
                 JumpD = 1'b1;
                 BranchD= 2'b0;
+                sel_adder = 1'b1;
             end
             default:begin
                 ResultSrcD = 2'b00;
+                sel_adder = 1'b0;
                 MemWriteD= 1'b0;
                 ImmSrcD = 3'b000;
                 ALUSrcD= 1'b0;

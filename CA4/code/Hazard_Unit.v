@@ -24,7 +24,7 @@ module HazardUnit(RegWriteM, RegWriteW, ResultSrcE, PCSrcE, ResultSrcM, ResultSr
 
 	assign StallD=lwStall;
 
-	assign FlushE=lwStall || (PCSrcE==2'b01) || (PCSrcE==2'b10);
+	assign FlushE=lwStall || (PCSrcE==1'b1);
 
 	assign FlushD=(PCSrcE==2'b01) ? 1 : 0;
 
