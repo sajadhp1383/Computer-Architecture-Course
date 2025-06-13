@@ -1,13 +1,13 @@
 module riscv_processor(clk,rst);
     input clk,rst;
 
-    wire clk, rst, StallF, StallD, FlushD, RegWriteD, MemWriteD, JumpD, ALUSrcD, ForwardAE, ForwardBE;
+    wire clk, rst, StallF, StallD, FlushD, RegWriteD, MemWriteD, JumpD, ALUSrcD;
     wire FlushE, LuiD, zero, PCSrcE, sel_adderD, RegWriteW, RegWriteM;
-    wire [2:0] ALUControlD, funct3;
-    wire [1:0] ImmSrcD, ResultSrcD, BranchD, ResultSrcE;
-    wire [4:0] Rs1, Rs2, RdE, Rs1E, Rs2E, RdM;
+    wire [2:0] ALUControlD, funct3, ImmSrcD;
+    wire [1:0] ResultSrcD, BranchD, ResultSrcE, ResultSrcM, ResultSrcW;
+    wire [4:0] Rs1, Rs2, RdE, Rs1E, Rs2E, RdM, RdW;
     wire [6:0] funct7, op;
-    wire [1:0] BranchE;
+    wire [1:0] BranchE, ForwardAE, ForwardBE;
 
     datapath dp(
     .clk(clk),
@@ -39,7 +39,7 @@ module riscv_processor(clk,rst);
     .BranchE(BranchE),
     .PCSrcE(PCSrcE),
     .ResultSrcE(ResultSrcE),
-    .Rdm(RdM),               
+    .RdM(RdM),               
     .RegWriteM(RegWriteM),   
     .RegWriteW(RegWriteW),
     .sel_adderD(sel_adderD)
@@ -57,27 +57,30 @@ module riscv_processor(clk,rst);
         .ImmSrcD(ImmSrcD),
         .RegWriteD(RegWriteD),
         .BranchD(BranchD),
-        .JumpD(JumpD)
+        .JumpD(JumpD),
+        .sel_adder(sel_adderD)
     );
 
     HazardUnit hazard_unit(
         .StallF(StallF),
         .StallD(StallD),
         .FlushD(FlushD),
-        .Rs1D(Rs1D),
-        .Rs2D(Rs2D),
         .FlushE(FlushE),
-        .RdE(RdE),
-        .Rs1E(Rs1E),
-        .Rs2E(Rs2E),
-        .PCSrcE(PCSrcE),
         .ForwardAE(ForwardAE),
         .ForwardBE(ForwardBE),
-        .ResultSrcE(ResultSrcE),
-        .RdM(RdM),
         .RegWriteM(RegWriteM),
-        .RdW(RdW),
-        .RegWriteW(RegWriteW)
+        .RegWriteW(RegWriteW),
+        .ResultSrcE(ResultSrcE),
+        .ResultSrcM(ResultSrcM),
+        .ResultSrcW(ResultSrcW),
+        .PCSrcE(PCSrcE),
+        .Rs1D(Rs1),
+        .Rs2D(Rs2),
+        .Rs1E(Rs1E),
+        .Rs2E(Rs2E),
+        .RdE(RdE),
+        .RdM(RdM),
+        .RdW(RdW)
     );
 
 endmodule

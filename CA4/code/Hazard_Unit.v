@@ -1,5 +1,12 @@
-module HazardUnit(input RegWriteM,RegWriteW,input[1:0] ResultSrcE,PCSrcE,ResultSrcM,ResultSrcW ,input[4:0] Rs1D,Rs2D,Rs1E,Rs2E,RdE,RdM,RdW,
-	output StallF,StallD,FlushD,FlushE,output[1:0] ForwardAE,ForwardBE);
+module HazardUnit(RegWriteM, RegWriteW, ResultSrcE, PCSrcE, ResultSrcM, ResultSrcW, Rs1D, Rs2D, Rs1E,
+	Rs2E, RdE, RdM, RdW, StallF, StallD, FlushD, FlushE, ForwardAE, ForwardBE);
+
+	input RegWriteM, RegWriteW, PCSrcE;
+	input[1:0] ResultSrcE, ResultSrcM, ResultSrcW;
+	input[4:0] Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW;
+
+	output wire StallF, StallD, FlushD, FlushE;
+	output wire [1:0] ForwardAE, ForwardBE;
 
 	wire lwStall;
 	assign ForwardAE=((Rs1E==RdM && RegWriteM)&&Rs1E!=0)?2'b10:

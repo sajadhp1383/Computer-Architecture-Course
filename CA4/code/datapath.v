@@ -1,16 +1,16 @@
 module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD, RegWriteD, MemWriteD, JumpD, ALUSrcD,
                 ALUControlD, ImmSrcD, ResultSrcD, LuiD, FlushE, Rs1, Rs2, zero, funct3, funct7, op, Rs1E, Rs2E, PCSrcE,RegWriteW,
-                sel_adderD,RdE,Rdm,BranchE,RegWriteM,ResultSrcE);
+                sel_adderD,RdE,RdM,BranchE,RegWriteM,ResultSrcE);
 
-    input wire clk, rst, StallF, StallD, FlushD, RegWriteD, MemWriteD, JumpD, ALUSrcD, ForwardAE, ForwardBE;
+    input wire clk, rst, StallF, StallD, FlushD, RegWriteD, MemWriteD, JumpD, ALUSrcD;
     input wire FlushE, LuiD, RegWriteM, sel_adderD;
-    input wire[2:0] ALUControlD;
-    input wire[1:0] ImmSrcD, ResultSrcD, BranchD;
+    input wire[2:0] ALUControlD, ImmSrcD;
+    input wire[1:0] ResultSrcD, BranchD, ForwardAE, ForwardBE;
     
-    output [4:0] Rs1, Rs2, RdE, Rs1E, Rs2E, Rdm;
+    output [4:0] Rs1, Rs2, RdE, Rs1E, Rs2E, RdM;
     output [1:0] BranchE, ResultSrcE;
     output PCSrcE, RegWriteW;
-    wire [31:0] PCPlus4F, PCTargetE, PCFprim, PCF, InstructionMemoryOut, ResultW, RD1out, RD2out, ExtImmD, PCPlus4E;
+    wire [31:0] PCPlus4F, PCTargetE, PCFprim, PCF, InstructionMemoryOut, ResultW, ExtImmD, PCPlus4E;
     wire [31:0] ExtImmE, PCPlus4D, InstrD, PCD, SrcAE, WriteDataE, SrcBE, ALUResultM, ALUResultE, PCE, ExtImmM, PCPlus4M;
     wire [31:0] RD1D, RD2D, RD1E, RD2E, WriteDataM;
     wire [4:0] Rs1D, Rs2D, RdD;
@@ -31,13 +31,13 @@ module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD,
 /////////////////////////////////////////// IF ///////////////////////////////////////////////////////////////
     
     
-    MUX3to1 mux1(.in0(PCPlus4F), .in1(PCTargetE), .in2(ALUResultE), .sel(PCSrcE), .out(PCFprim));
+    MUX2to1 mux1(.in0(PCPlus4F), .in1(PCTargetE), .sel(PCSrcE), .out(PCFprim));
 
     Register #(32) PC(.in(PCFprim), .clk(clk), .rst(rst), .out(PCF)); 
 
     InstructionMemory IM(.pc(PCF), .instruction(InstructionMemoryOut));
 
-    Adder adder1(.a(PCF),.b(3'b100),.w(PCPlus4F));
+    Adder adder1(.a(PCF),.b(32'd4),.w(PCPlus4F));
 
 
     EnRegister #(32) IF1(.in(InstructionMemoryOut), .clk(clk), .rst(rst), .clr(FlushD), .en(~(StallD)) ,.out(InstrD)); 
@@ -51,7 +51,7 @@ module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD,
 /////////////////////////////////////////// ID ///////////////////////////////////////////////////////////////
 
     wire sel_adderE;
-    RegisterFile RF(.clk(clk),.rst(rst),.A1(Rs1D),.A2(Rs2D),.A3(RdD),.WD3(ResultW),.WE3(RegWriteW),.RD1(RD1out),.RD2(RD2out));
+    RegisterFile RF(.clk(clk),.rst(rst),.A1(Rs1D),.A2(Rs2D),.A3(RdD),.WD3(ResultW),.WE3(RegWriteW),.RD1(RD1D),.RD2(RD2D));
     assign Rs1D = InstrD[19:15];
     assign Rs2D = InstrD[24:20];
     assign RdD  = InstrD[11:7];
@@ -100,8 +100,8 @@ module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD,
 
     MUX4to1  MUX1(.in0(RD1E), .in1(ResultW), .in2(ALUResultM), .in3(ExtImmM), .sel(ForwardAE), .out(SrcAE));
     MUX4to1  MUX2(.in0(RD2E), .in1(ResultW), .in2(ALUResultM), .in3(ExtImmM), .sel(ForwardBE), .out(WriteDataE));
-    MUX2to1  MUX3(.in0(WriteDataE), .in1(ExtImmE), .sel(ALUResultE), .out(SrcBE));
-    ALU AluE(.a(SrcAE), .b(SrcBE), .op(op), .aluout(ALUResultE), .zero(ZeroE));
+    MUX2to1  MUX3(.in0(WriteDataE), .in1(ExtImmE), .sel(ALUSrcE), .out(SrcBE));
+    ALU AluE(.a(SrcAE), .b(SrcBE), .op(ALUControlE), .aluout(ALUResultE), .zero(ZeroE));
 
     BranchBox brbox(.Zero(ZeroE), .Branch(BranchE), .Jump(JumpE), .PCSrc(PCSrcE));
 
@@ -132,7 +132,7 @@ module datapath(clk, rst, StallF, StallD, ForwardAE, ForwardBE, FlushD, BranchD,
 
     wire [31:0] PCPlus4W, ReadDataM, ALUResultW, ReadDataW, ExtImmW;
     wire [1:0] ResultSrcW;
-    wire RdW;
+    wire [4:0] RdW;
 
     DataMemory dataMem(.clk(clk), .memWrite(MemWriteM), .addr(ALUResultM), .writeData(WriteDataM), .readData(ReadDataM));
 

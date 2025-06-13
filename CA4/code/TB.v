@@ -10,7 +10,7 @@ module TEST_RISCV();
     always #20 clk = ~clk;
 
     always begin 
-        #50 rst = 1; #50 rst = 0;
+        #50 rst = 1; #20 rst = 0;
         #15000
         #20 $stop;
     end
