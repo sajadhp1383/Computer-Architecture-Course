@@ -1,382 +1,464 @@
 m255
-K3
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
 13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
 cModel Technology
-Z0 dC:\altera\13.0sp1
+dC:/intelFPGA/20.1
 vAdder
-Z1 !s100 ozmOM[YjIF9SX3keh[:A01
-Z2 Id@WAElmJdVKngnJ0fTLaS1
-Z3 V<X5HhbbCOe6X^CW1bA1=o1
-Z4 dE:\UT\CA\Computer-Architecture-Spring2025\CA4\verilog
-Z5 w1749449567
-Z6 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v
-Z7 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v
-L0 1
-Z8 OV;L;10.1d;51
-r1
-31
-Z9 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v|
-Z10 o-work work -O0
-Z11 n@adder
-Z12 !s108 1749768852.916000
-Z13 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v|
+Z0 !s110 1750062108
 !i10b 1
+!s100 zj:BWh`VUg2AU5eINO_A20
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IY0DnCm`Z5[lbHZ5Cz[HW72
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/verilog
+w1749700682
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Adder.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Adder.v
+!i122 727
+L0 1 7
+Z4 OV;L;2020.1;71
+r1
 !s85 0
-!s101 -O0
+31
+Z5 !s108 1750062108.000000
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Adder.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@adder
 vALU
-Z14 !s100 :3[jffBVF2[;130TbZNTA1
-Z15 IlVBO^<N[Igm][oCEUIWXN0
-Z16 V>`:Lc5TR4b^X[C]eQ?9?]2
-R4
-Z17 w1749576008
-Z18 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v
-Z19 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v
-L0 1
-R8
-r1
-31
-Z20 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v|
-R10
-Z21 n@a@l@u
-Z22 !s108 1749768852.996000
-Z23 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v|
+R0
 !i10b 1
+!s100 >fUL>bk[@P4XNaGkbB?_:0
+R1
+IUYS70[3^]A`3PjSF75@>@2
+R2
+R3
+w1749699278
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU.v
+!i122 728
+L0 1 20
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R5
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU.v|
+!i113 1
+R6
+R7
+n@a@l@u
 vALU_Controller
-Z24 !s100 7F17cjeSTQig1Wd<[TdkL3
-Z25 I:deE]AXL1AKL9eQW6S<0X3
-Z26 VNPl>bzURh>0Cz1^Z<X[^I1
-R4
-Z27 w1749768032
-Z28 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v
-Z29 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v
-L0 12
-R8
-r1
-31
-Z30 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v|
-R10
-Z31 n@a@l@u_@controller
-Z32 !s108 1749768853.068000
-Z33 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v|
+R0
 !i10b 1
+!s100 PTEc?TKlj8kNE?h[11T]V1
+R1
+Ib`ZJF7e@CIYRCC?mGe;De1
+R2
+R3
+Z8 w1749774762
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU_Controller.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU_Controller.v
+!i122 729
+L0 12 54
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R5
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU_Controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU_Controller.v|
+!i113 1
+R6
+R7
+n@a@l@u_@controller
 vBranchBox
-Z34 !s100 X?Qd2XC]9o6dQ6FYQ96a80
-Z35 I<4Zi55?bUl_A=Hz?dcXna3
-Z36 VcImB4S@17JkG`^;VH[gLF3
-R4
-Z37 w1749742161
-Z38 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/BranchBox.v
-Z39 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/BranchBox.v
-L0 1
-R8
-r1
-31
-Z40 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/BranchBox.v|
-R10
-Z41 n@branch@box
-Z42 !s108 1749768853.140000
-Z43 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/BranchBox.v|
+R0
 !i10b 1
+!s100 <e@;]R5GnG2f7emY5YMj^1
+R1
+I8`U4ACl`D[ZM@EB=PjHnM2
+R2
+R3
+w1749777731
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/BranchBox.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/BranchBox.v
+!i122 730
+L0 1 8
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R5
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/BranchBox.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/BranchBox.v|
+!i113 1
+R6
+R7
+n@branch@box
 vControl_Unit
-Z44 !s100 :M8bEk8Ojj5a:=d7?8n1B0
-Z45 IKZCjRHa_Vn[Ioz1XG4JA60
-Z46 V^<zY]Ma@;_l[?3cRNjafY2
-R4
-Z47 w1749759652
-Z48 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/OP_Controller.v
-Z49 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/OP_Controller.v
-L0 10
-R8
-r1
-31
-Z50 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/OP_Controller.v|
-R10
-Z51 n@control_@unit
-Z52 !s108 1749768853.752000
-Z53 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/OP_Controller.v|
+Z9 !s110 1750062109
 !i10b 1
+!s100 DaQKhS>2H]QL<9zcY:j_=2
+R1
+IkhblQ0BjbPjnIk5SI=l<J3
+R2
+R3
+w1750058387
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/OP_Controller.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/OP_Controller.v
+!i122 738
+L0 10 99
+R4
+r1
 !s85 0
-!s101 -O0
+31
+Z10 !s108 1750062109.000000
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/OP_Controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/OP_Controller.v|
+!i113 1
+R6
+R7
+n@control_@unit
 vcontroller
-Z54 !s100 gWiNm@kg6?z@K`CDABb692
-Z55 I6@44VE2D;9nnR^F`fme5M2
-Z56 VTl=^K^a_Gc5EF0UX:XN_J2
-R4
-Z57 w1749768417
-Z58 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Controller.v
-Z59 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Controller.v
-L0 2
-R8
-r1
-31
-Z60 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Controller.v|
-R10
-Z61 !s108 1749768853.212000
-Z62 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Controller.v|
+R0
 !i10b 1
+!s100 N`bA=YT:>G4TeZ]]JN70<2
+R1
+IjRcO@]Hi6[fJ[QHX[el<@0
+R2
+R3
+w1749789335
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Controller.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Controller.v
+!i122 731
+L0 2 27
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R5
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Controller.v|
+!i113 1
+R6
+R7
 vDataMemory
-Z63 !s100 n^ojM8cNI>AmJE4H4i:AJ2
-Z64 I43[@WSoBN0mF_Th=?ZIXF1
-Z65 V9Eba9cUWg6QIldmkbNcIz2
-R4
-R5
-Z66 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v
-Z67 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v
-L0 1
-R8
-r1
-31
-Z68 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v|
-R10
-Z69 n@data@memory
-Z70 !s108 1749768853.281000
-Z71 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v|
+R0
 !i10b 1
+!s100 8GIYO971ne1_Iz^1?WA3j2
+R1
+IZOdeKPWB9f;N^dQ>XL`nN0
+R2
+R3
+w1750062060
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/DataMemory.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/DataMemory.v
+!i122 732
+L0 1 44
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R5
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/DataMemory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/DataMemory.v|
+!i113 1
+R6
+R7
+n@data@memory
 vdatapath
-Z72 !s100 =eM^JUC;R=GNQM3NRUj5X2
-Z73 IdQl]:Mc^F]`]49lN?Tg2e3
-Z74 VoA31W15BZQBYIOZV7:TLi1
-R4
-Z75 w1749768129
-Z76 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v
-Z77 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v
-L0 1
-R8
-r1
-31
-Z78 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v|
-R10
-Z79 !s108 1749768853.345000
-Z80 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v|
+R0
 !i10b 1
-!s85 0
-!s101 -O0
-vEnRegister
-Z81 !s100 04DTn9k<YXM86;z`4kQAG1
-Z82 IG@UNX@l64lnR95J:`L[iK0
-Z83 V4XH?dD^WT<A3V^>SgOEcb0
+!s100 QK_1DF4DE2B234D`dJ@hQ2
+R1
+IVi3KPejf4Z`haQGVGe8493
+R2
+R3
+w1750061993
+8C:\Users\Erfan\Desktop\ComputerArch\Computer-Architecture-S04\CA4\code\datapath.v
+FC:\Users\Erfan\Desktop\ComputerArch\Computer-Architecture-S04\CA4\code\datapath.v
+!i122 733
+L0 1 161
 R4
-Z84 w1749455224
-Z85 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v
-Z86 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v
-L0 17
-R8
 r1
-31
-Z87 !s108 1749768853.823000
-Z88 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v|
-Z89 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v|
-R10
-Z90 n@en@register
-!i10b 1
 !s85 0
-!s101 -O0
-vHazardUnit
-Z91 !s100 0]5CeV^;zAUaE=ZmciDbB2
-Z92 IOUNY2X2kHE_ACd4T`7G9T2
-Z93 V]bcQD_eVWYgC`]kPF90252
-R4
-Z94 w1749767251
-Z95 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Hazard_Unit.v
-Z96 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Hazard_Unit.v
-L0 1
-R8
-r1
 31
-Z97 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Hazard_Unit.v|
-R10
-Z98 n@hazard@unit
-Z99 !s108 1749768853.425000
-Z100 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Hazard_Unit.v|
-!i10b 1
-!s85 0
-!s101 -O0
-vImmediateExtend
-Z101 !s100 L[0BXhe`O_6]=4H]NXfae0
-Z102 IJNBUFKY=hTlWTfabVANnJ1
-Z103 VKaFa7FeNMzbB<L42NbVJS0
-R4
 R5
-Z104 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v
-Z105 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v
-L0 1
-R8
-r1
-31
-Z106 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v|
-R10
-Z107 n@immediate@extend
-Z108 !s108 1749768853.496000
-Z109 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v|
+!s107 C:\Users\Erfan\Desktop\ComputerArch\Computer-Architecture-S04\CA4\code\datapath.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Erfan\Desktop\ComputerArch\Computer-Architecture-S04\CA4\code\datapath.v|
+!i113 1
+R6
+R7
+vEnRegister
+R9
 !i10b 1
+!s100 g@SfHQN1SbY64IIY3880n1
+R1
+IDkKTdKi=k9WF8BX=]7dRo2
+R2
+R3
+Z11 w1749972442
+Z12 8C:\Users\Erfan\Desktop\ComputerArch\Computer-Architecture-S04\CA4\code\register.v
+Z13 FC:\Users\Erfan\Desktop\ComputerArch\Computer-Architecture-S04\CA4\code\register.v
+!i122 739
+L0 18 17
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R10
+Z14 !s107 C:\Users\Erfan\Desktop\ComputerArch\Computer-Architecture-S04\CA4\code\register.v|
+Z15 !s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Erfan\Desktop\ComputerArch\Computer-Architecture-S04\CA4\code\register.v|
+!i113 1
+R6
+R7
+n@en@register
+vHazardUnit
+R0
+!i10b 1
+!s100 4LNRcW`<cGWhA=h8U3bRi1
+R1
+I8QiNT0B2<l1oh@_[nX:Ld0
+R2
+R3
+w1749967484
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Hazard_Unit.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Hazard_Unit.v
+!i122 734
+L0 1 31
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Hazard_Unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Hazard_Unit.v|
+!i113 1
+R6
+R7
+n@hazard@unit
+vImmediateExtend
+R0
+!i10b 1
+!s100 Vi?RnjJ@Y[8XXojAFoMWT0
+R1
+I4?3Jg=BM:;fV[zAZDKFm[0
+R2
+R3
+w1746879759
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ImmediateExtend.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ImmediateExtend.v
+!i122 735
+L0 1 17
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ImmediateExtend.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ImmediateExtend.v|
+!i113 1
+R6
+R7
+n@immediate@extend
 vInstructionMemory
-Z110 IWW[^=CZk8X@LCM<VJJRbz0
-Z111 V`Sd2h3f=X09dZ[6dMODS42
-R4
-Z112 w1749768844
-Z113 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v
-Z114 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v
-L0 1
-R8
-r1
-31
-Z115 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v|
-R10
-Z116 n@instruction@memory
-Z117 !s100 `@Phg8cmn2ZF2fh`<:iB11
-Z118 !s108 1749768853.558000
-Z119 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/InstructionMemory.v|
+R9
 !i10b 1
+!s100 KUNLSUhC=RARllYQH@Wf53
+R1
+IU4MLimRIV?HKc[EED9EAK3
+R2
+R3
+R8
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/InstructionMemory.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/InstructionMemory.v
+!i122 736
+L0 1 21
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R5
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/InstructionMemory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/InstructionMemory.v|
+!i113 1
+R6
+R7
+n@instruction@memory
 vMUX2to1
-Z120 !s100 IW7Hnoh<WR45b[V>HLEnX3
-Z121 Ioo]TaVi6YVm5T=KlB6OC_2
-Z122 Vh315HFiAK3Y8bY]<d;V:J1
-R4
-Z123 w1749759591
-Z124 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v
-Z125 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v
-L0 12
-R8
-r1
-31
-Z126 !s108 1749768853.650000
-Z127 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v|
-Z128 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v|
-R10
-Z129 n@m@u@x2to1
+R9
 !i10b 1
+!s100 Dl8`RA2i8]7O3X_b5^`O`0
+R1
+IMlfzDmk?kIo0Sb@Z`a_VZ1
+R2
+R3
+R8
+Z16 8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/MUX.v
+Z17 FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/MUX.v
+!i122 737
+L0 12 8
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R10
+Z18 !s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/MUX.v|
+Z19 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/MUX.v|
+!i113 1
+R6
+R7
+n@m@u@x2to1
 vMUX3to1
-Z130 !s100 YBCI[VSNP=UJTSgCHVCZF3
-Z131 I`oN=5OJL?ZWea>^0Zec0d1
-Z132 V8G1jGBfeIoV]h<g9CoW^_1
-R4
-R123
-R124
-R125
-L0 1
-R8
-r1
-31
-R126
-R127
-R128
-R10
-Z133 n@m@u@x3to1
+R9
 !i10b 1
+!s100 NKA3:MGzd4f7975=bLAEC3
+R1
+IRmS2ZNhnkiR[U5>kJ<ZBR0
+R2
+R3
+R8
+R16
+R17
+!i122 737
+L0 1 9
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R10
+R18
+R19
+!i113 1
+R6
+R7
+n@m@u@x3to1
 vMUX4to1
-Z134 !s100 Q`?nfJc>>^R^l?zXP^GLO3
-Z135 IVSgESl]?@bfS94NG95m:O3
-Z136 VOU`HhSKh]dPa_=Sm=hIBR3
-R4
-R123
-R124
-R125
-L0 22
-R8
-r1
-31
-R126
-R127
-R128
-R10
-Z137 n@m@u@x4to1
+R9
 !i10b 1
+!s100 V6aj7Uc<RD@aAZGf>06cm2
+R1
+IW^XnV=?4jj?1zDVa8Q6262
+R2
+R3
+R8
+R16
+R17
+!i122 737
+L0 22 10
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R10
+R18
+R19
+!i113 1
+R6
+R7
+n@m@u@x4to1
 vRegister
-Z138 !s100 ;9:A;feBSmAlz]=1>0Hj53
-Z139 I<ePzjjgI6aa0^V:M[@B[W3
-Z140 V>:iz1jYA0VG>M?[`h>?^o1
-R4
-R84
-R85
-R86
-L0 1
-R8
-r1
-31
-R87
-R88
-R89
-R10
-Z141 n@register
+R9
 !i10b 1
+!s100 AMT:Je2<6>UjaIfRmSSIB1
+R1
+ITV1IV98K^F9_>]VgP]QS91
+R2
+R3
+R11
+R12
+R13
+!i122 739
+L0 1 15
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R10
+R14
+R15
+!i113 1
+R6
+R7
+n@register
 vRegisterFile
-Z142 !s100 R<HJWah8RG76kEIP1SQ>42
-Z143 I=ATHFInH@E8ZDUo8YUNAm2
-Z144 VV?jWZ5`7TnADMCEkkVIN?1
-R4
-Z145 w1749453885
-Z146 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v
-Z147 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v
-L0 1
-R8
-r1
-31
-Z148 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v|
-R10
-Z149 n@register@file
-Z150 !s108 1749768853.905000
-Z151 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v|
+R9
 !i10b 1
+!s100 AT84@7LLd4TaOTLHC28J83
+R1
+IAF<ZnOoZm5?1nSE47aV_F0
+R2
+R3
+w1749786364
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/RegisterFile.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/RegisterFile.v
+!i122 740
+L0 1 26
+R4
+r1
 !s85 0
-!s101 -O0
+31
+R10
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/RegisterFile.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/RegisterFile.v|
+!i113 1
+R6
+R7
+n@register@file
 vriscv_processor
-Z152 !s100 7ZKKdBeD_LTbQzdS`B<W10
-Z153 I^3NVo6a@V]:[TObY3olkP1
-Z154 VYeWAFNmER@_5>Tc0E`2>A3
-R4
-Z155 w1749768494
-Z156 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/top_module.v
-Z157 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/top_module.v
-L0 1
-R8
-r1
-31
-Z158 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/top_module.v|
-R10
+R9
 !i10b 1
+!s100 GVgBi@^<hm`ngCebZLG0;0
+R1
+IEEE?oQE9AjIi>:h7HPHMQ1
+R2
+R3
+w1749968075
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/top_module.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/top_module.v
+!i122 742
+L0 1 89
+R4
+r1
 !s85 0
-Z159 !s108 1749768853.967000
-Z160 !s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/top_module.v|
-!s101 -O0
+31
+R10
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/top_module.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/top_module.v|
+!i113 1
+R6
+R7
 vTEST_RISCV
+R9
 !i10b 1
-Z161 !s100 Q=866ed:SFnb^5JlZSF9A3
-Z162 I[U>I`:5KKb5dIi[nT=I;>1
-Z163 VoO>QAnf7Q]0i8TET7G;]R2
+!s100 OO>DZ2z;lM;<eRkAh`PVn1
+R1
+I7bnMLlgFzE5kUoHJaGY1f1
+R2
+R3
+w1749781110
+8C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/TB.v
+FC:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/TB.v
+!i122 741
+L0 4 15
 R4
-Z164 w1749768227
-Z165 8E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/TB.v
-Z166 FE:/UT/CA/Computer-Architecture-Spring2025/CA4/code/TB.v
-L0 4
-R8
 r1
 !s85 0
 31
-!s108 1749768854.028000
-!s107 E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/TB.v|
-Z167 !s90 -reportprogress|300|-work|work|E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/TB.v|
-!s101 -O0
 R10
-Z168 n@t@e@s@t_@r@i@s@c@v
+!s107 C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/TB.v|
+!i113 1
+R6
+R7
+n@t@e@s@t_@r@i@s@c@v

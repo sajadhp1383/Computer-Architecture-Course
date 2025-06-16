@@ -5,7 +5,7 @@ module riscv_processor(clk,rst);
     wire FlushE, LuiD, zero, PCSrcE, sel_adderD, RegWriteW, RegWriteM;
     wire [2:0] ALUControlD, funct3, ImmSrcD;
     wire [1:0] ResultSrcD, BranchD, ResultSrcE, ResultSrcM, ResultSrcW;
-    wire [4:0] Rs1, Rs2, RdE, Rs1E, Rs2E, RdM, RdW;
+    wire [4:0] Rs1D, Rs2D, RdE, Rs1E, Rs2E, RdM, RdW;
     wire [6:0] funct7, op;
     wire [1:0] BranchE, ForwardAE, ForwardBE;
 
@@ -27,8 +27,8 @@ module riscv_processor(clk,rst);
     .ResultSrcD(ResultSrcD), 
     .LuiD(LuiD), 
     .FlushE(FlushE), 
-    .Rs1(Rs1), 
-    .Rs2(Rs2),
+    .Rs1D(Rs1D), 
+    .Rs2D(Rs2D),
     .RdE(RdE),
     .Rs1E(Rs1E),
     .Rs2E(Rs2E),
@@ -42,7 +42,10 @@ module riscv_processor(clk,rst);
     .RdM(RdM),               
     .RegWriteM(RegWriteM),   
     .RegWriteW(RegWriteW),
-    .sel_adderD(sel_adderD)
+    .sel_adderD(sel_adderD),
+    .RdW(RdW),
+    .ResultSrcM(ResultSrcM),
+    .ResultSrcW(ResultSrcW)
 );
 
 
@@ -74,8 +77,8 @@ module riscv_processor(clk,rst);
         .ResultSrcM(ResultSrcM),
         .ResultSrcW(ResultSrcW),
         .PCSrcE(PCSrcE),
-        .Rs1D(Rs1),
-        .Rs2D(Rs2),
+        .Rs1D(Rs1D),
+        .Rs2D(Rs2D),
         .Rs1E(Rs1E),
         .Rs2E(Rs2E),
         .RdE(RdE),

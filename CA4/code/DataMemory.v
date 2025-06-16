@@ -12,7 +12,6 @@ module DataMemory (clk,memWrite,addr,writeData,readData);
     assign readData = memory[addr[11:2]]; 
 
 
-    
     always @(posedge clk) begin
         if (memWrite) begin
             memory[addr[11:2]] <= writeData;
@@ -24,8 +23,8 @@ module DataMemory (clk,memWrite,addr,writeData,readData);
         memory[1]  = 32'b00010000100001101010101100010101;
         memory[2]  = 32'b10101010001011110101100000110101;
         memory[3]  = 32'b01101100010100100111010111110111;
-        memory[4]  = 32'b11111101110100011101101011001100; // Largest
-        memory[5]  = 32'b00011101000100000011100001010111;
+        memory[4]  = 32'b11111101110100011101101011001100; 
+        memory[5]  = 32'b11111111111111111111111111111111;  // Largest
         memory[6]  = 32'b01010011011010101100110100100101;
         memory[7]  = 32'b11100001010011111101101110110011;
         memory[8]  = 32'b00010111000001000101000011110101;

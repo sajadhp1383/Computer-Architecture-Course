@@ -1,62 +1,102 @@
-E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/DataMemory.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module DataMemory
-
-Top level modules:
-	DataMemory
-
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Controller.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Controller.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Controller.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Controller.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module controller
 
 Top level modules:
 	controller
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v {2 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU_Controller.v {2 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU_Controller.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ALU_Controller
-** Warning: E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v(22): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
-** Warning: E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v(26): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
-** Warning: E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v(27): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
-** Warning: E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU_Controller.v(28): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
+** Warning: C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU_Controller.v(22): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU_Controller.v(26): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU_Controller.v(27): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU_Controller.v(28): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 
 Top level modules:
 	ALU_Controller
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/TB.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/TB.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/TB.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module TEST_RISCV
 
 Top level modules:
 	TEST_RISCV
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/datapath.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/datapath.v {1 {vlog -work work -stats=none {C:\Users\Erfan\Desktop\ComputerArch\Computer-Architecture-S04\CA4\code\datapath.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module datapath
 
 Top level modules:
 	datapath
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/BranchBox.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/BranchBox.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ImmediateExtend.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ImmediateExtend.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ImmediateExtend
+
+Top level modules:
+	ImmediateExtend
+
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Adder.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Adder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Hazard_Unit.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/Hazard_Unit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module HazardUnit
+
+Top level modules:
+	HazardUnit
+
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/InstructionMemory.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/InstructionMemory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module InstructionMemory
+
+Top level modules:
+	InstructionMemory
+
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/register.v {1 {vlog -work work -stats=none {C:\Users\Erfan\Desktop\ComputerArch\Computer-Architecture-S04\CA4\code\register.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Register
+-- Compiling module EnRegister
+
+Top level modules:
+	Register
+	EnRegister
+
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/RegisterFile.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/RegisterFile.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
+
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/BranchBox.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/BranchBox.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module BranchBox
 
 Top level modules:
 	BranchBox
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/OP_Controller.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/OP_Controller.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Control_Unit
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/top_module.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/top_module.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module riscv_processor
 
 Top level modules:
-	Control_Unit
+	riscv_processor
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/MUX.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/MUX.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/MUX.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module MUX3to1
 -- Compiling module MUX2to1
 -- Compiling module MUX4to1
@@ -66,55 +106,11 @@ Top level modules:
 	MUX2to1
 	MUX4to1
 
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ALU.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module ALU
+} {} {}} C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/OP_Controller.v {1 {vlog -work work -stats=none C:/Users/Erfan/Desktop/ComputerArch/Computer-Architecture-S04/CA4/code/OP_Controller.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Control_Unit
 
 Top level modules:
-	ALU
-
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/RegisterFile.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module RegisterFile
-
-Top level modules:
-	RegisterFile
-
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/register.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Register
--- Compiling module EnRegister
-
-Top level modules:
-	Register
-	EnRegister
-
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/ImmediateExtend.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module ImmediateExtend
-
-Top level modules:
-	ImmediateExtend
-
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/top_module.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/top_module.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module riscv_processor
-
-Top level modules:
-	riscv_processor
-
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Adder.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module Adder
-
-Top level modules:
-	Adder
-
-} {} {}} E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Hazard_Unit.v {1 {vlog -work work E:/UT/CA/Computer-Architecture-Spring2025/CA4/code/Hazard_Unit.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module HazardUnit
-
-Top level modules:
-	HazardUnit
+	Control_Unit
 
 } {} {}}

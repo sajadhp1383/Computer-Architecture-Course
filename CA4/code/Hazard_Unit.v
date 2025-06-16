@@ -9,12 +9,12 @@ module HazardUnit(RegWriteM, RegWriteW, ResultSrcE, PCSrcE, ResultSrcM, ResultSr
 	output wire [1:0] ForwardAE, ForwardBE;
 
 	wire lwStall;
-	assign ForwardAE=((Rs1E==RdM && RegWriteM)&&Rs1E!=0)?2'b10:
+	assign ForwardAE = ((Rs1E == RdM && RegWriteM) && Rs1E!=0 ) ? 2'b10:
 			 (((Rs1E==RdW && RegWriteW)&&Rs1E!=0) || (Rs1E==RdW && ResultSrcW==2'b11 && Rs1E!=0))?2'b01:
 			(Rs1E==RdM && ResultSrcM==2'b11 && Rs1E!=0)?2'b11:
 			 2'b00;
-	assign ForwardBE=((Rs2E==RdM && RegWriteM) && Rs2E!=0)?2'b10:
-			(((Rs2E==RdW && RegWriteW) && Rs2E!=0) || (Rs2E==RdW && ResultSrcW==2'b11 && Rs2E!=0))?2'b01:
+	assign ForwardBE = ((Rs2E == RdM && RegWriteM) && Rs2E!=0) ? 2'b10:
+			(((Rs2E==RdW && RegWriteW) && Rs2E!=0) || (Rs2E==RdW && ResultSrcW==2'b11 && Rs2E!=0))? 2'b01:
 			 (Rs2E==RdM && ResultSrcM==2'b11 && Rs2E!=0)?2'b11:
 			 2'b00;
 
