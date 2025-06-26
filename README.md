@@ -18,5 +18,5 @@ Implemented a pipelined processor based on the RISC-V instruction set with hazar
 
 ## Contributors
 
-- Sajjad Hassanpour ([sajadhp](https://github.com/sajadhp))  
+- Sajjad Hassanpour ([sajadhp](https://github.com/sajadhp1383))  
 - Erfan Falahati ([erfan-f](https://github.com/erfan-f))
