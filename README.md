@@ -7,8 +7,8 @@ A comprehensive collection of advanced computer architecture projects implementi
 ## Project Team
 
 **Contributors:**
-- **Sajad Hassanpour** ([sajadhp](https://github.com/sajadhp1383)) - Team Lead & Hardware Architect
-- **Erfan Falahati** ([erfan-f](https://github.com/erfan-f)) - Verification Engineer & System Designer
+- **Erfan Falahati** ([erfan-f](https://github.com/erfan-f))
+- **Sajad Hassanpour** ([sajadhp](https://github.com/sajadhp1383))
 
 ## Project Portfolio
 
