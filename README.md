@@ -101,7 +101,7 @@ A comprehensive collection of advanced computer architecture projects implementi
 - **Performance trade-off studies** between different design approaches
 - **Real-world algorithm implementation** in hardware
 
-## 🔍 Academic Context
+## Academic Context
 
 **Course**: Computer Architecture  
 **Institution**: University of Tehran - Electrical and Computer Engineering Department  
